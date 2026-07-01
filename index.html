@@ -93,7 +93,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      min-width: 教師與學生展示作品px;
+      min-width: 0;
     }
 
     .brand-mark {
@@ -920,11 +920,6 @@
       padding: 34px 22px;
     }
 
-    .footer {
-  width: 100%;
-  background: #222;
-}
-
 .footer-inner {
   max-width: 1920px;
   margin: 0 auto;
@@ -943,6 +938,7 @@
       color: #ffe0a1;
       font-weight: 700;
     }
+    
 
     .back-top {
       position: fixed;
@@ -1084,8 +1080,8 @@
     }
   </style>
   <!-- 1. Banner 圖片（全幅 16:9） -->
-  <section id="home" style="margin:0; padding:0; position:relative; width:100%; padding-top:45%; overflow:hidden; line-height:0;">
-    <img src="banner.png" alt="Banner" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; display:block;">
+  <section id="home" style="margin:0; padding:0; position:relative; width:100%; padding-top:59.25%; overflow:hidden; line-height:0;">
+    <img src="images/banner.png" alt="Banner" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; display:block;">
   </section>
 
   <!-- 2. 導覽列（移到 Banner 下方） -->
@@ -1111,6 +1107,8 @@
       </nav>
     </div>
   </header>
+
+  <main>
 
 <!-- 3. 倒數計時器 + 活動資訊 -->
 <section id="countdown-section">
@@ -1205,6 +1203,7 @@
         </div>
 
         
+      </div>
       </div>
     </section>
 
@@ -1456,59 +1455,117 @@
       </div>
     </section>
 
-    <section id="speakers">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">Speakers</div>
-              <h2 style="color:red;">專題講者，需要確認講者~</h2>
-            <p class="section-desc">邀請資訊工程、語言科技、客家研究、文化資訊素養與產業實務專家，共同探討客語 AI 的研究基礎與應用方向。</p>
-          </div>
-        </div>
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>Speakers Pending Preview</title>
+<style>
 
-        <div class="grid-3">
-          <article class="card speaker-card">
-            <style>
-.speaker-avatar {
-  width: 80px;
-  height: 80px;
-  flex-shrink: 0;
-  overflow: hidden;
-  border-radius: 8px;
-}
-.speaker-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+  .container { max-width: 1000px; margin: 0 auto; }
+  .section-kicker { font-size:12px; letter-spacing:2px; color:#9aa3b5; font-weight:700; }
+  .section-desc { color:#7b8296; }
+
+  .speakers-pending {
+    position: relative;
+    text-align: center;
+    padding: 60px 20px 50px;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #e7ebf3;
+  }
+  .speakers-pending .pending-illustration { width: 220px; margin: 0 auto 10px; }
+  .speakers-pending .pending-illustration svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .speakers-pending h3 { font-size: 28px; font-weight: 800; color: #1a2233; margin: 12px 0 14px; }
+  .speakers-pending p { font-size: 15px; line-height: 1.9; color: #7b8296; margin: 0; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .pi-circle { animation: pi-breathe 3.2s ease-in-out infinite; transform-origin: 150px 80px; }
+    .pi-person { animation: pi-float 3.2s ease-in-out infinite; }
+    .pi-bubble { animation: pi-bob 2.6s ease-in-out infinite; transform-origin: 218px 36px; }
+    .pi-dot1 { animation: pi-blink 1.2s ease-in-out infinite; }
+    .pi-dot2 { animation: pi-blink 1.2s ease-in-out infinite 0.2s; }
+    .pi-dot3 { animation: pi-blink 1.2s ease-in-out infinite 0.4s; }
+    .pi-sparkle-dot { animation: pi-twinkle 2.4s ease-in-out infinite; }
+    .pi-sparkle-plus { animation: pi-twinkle 2.4s ease-in-out infinite 1.1s; }
+    .pi-arc { stroke-dasharray: 260; stroke-dashoffset: 260; animation: pi-draw 2.4s ease-out forwards; }
+  }
+
+  @keyframes pi-breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+  }
+  @keyframes pi-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+  @keyframes pi-bob {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-3px) rotate(-2deg); }
+  }
+  @keyframes pi-blink {
+    0%, 100% { opacity: 0.35; }
+    50% { opacity: 1; }
+  }
+  @keyframes pi-twinkle {
+    0%, 100% { opacity: 0.25; transform: scale(0.85); }
+    50% { opacity: 1; transform: scale(1.15); }
+  }
+  @keyframes pi-draw {
+    to { stroke-dashoffset: 0; }
+  }
 </style>
-  <div class="speaker-avatar"><img src="speaker-01.jpeg" alt="丁川康副校長"></div>
-  <div><small>AI 與語言科技</small><h3>丁川康副校長</h3><p>專題演講：AI 與語言科技發展趨勢</p></div>
-          </article>
-          <article class="card speaker-card">
-            <div class="speaker-avatar"><img src="speaker-02.jpeg" alt="陳柏琳特聘教授"></div>
-            <div><small>大型語言模型</small><h3>陳柏琳特聘教授</h3><p>專題演講：大型語言模型與生成式 AI 應用</p></div>
-          </article>
-          <article class="card speaker-card">
-             <div class="speaker-avatar"><img src="speaker-03.jpeg" alt="李鴻欣博士"></div>
-            <div><small>產業應用</small><h3>李鴻欣博士</h3><p>專題演講：客語 AI 產業應用實務</p></div>
-          </article>
-          <article class="card speaker-card">
-            <div class="speaker-avatar"><img src="speaker-04.jpeg" alt="陳昭珍講座教授"></div>
-            <div><small>文化與資訊素養</small><h3>陳昭珍講座教授</h3><p>專題演講：文化與資訊素養</p></div>
-          </article>
-          <article class="card speaker-card">
-             <div class="speaker-avatar"><img src="speaker-05.jpeg" alt="蔡明峰教授"></div>
-            <div><small>文化復振應用</small><h3>蔡明峰教授</h3><p>專題演講：生成式 AI 與客家文化復振應用</p></div>
-          </article>
-          <article class="card speaker-card">
-             <div class="speaker-avatar"><img src="speaker-06.jpeg" alt="王家慶特聘教授"></div>
-            <div><small>AI 系統架構</small><h3>王家慶特聘教授</h3><p>專題演講：AI 系統架構與應用</p></div>
-          </article>
-        </div>
+</head>
+<body>
+<section id="speakers">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Speakers</div>
+        <h2 style="color:rgb(0, 0, 0);">專題講者</h2>
+        <p class="section-desc">演講者邀請中，相關資訊將依確認進度陸續公告。</p>
       </div>
-    </section>
+    </div>
+
+    <div class="speakers-pending">
+      <div class="pending-illustration">
+        <svg viewBox="0 0 300 190" xmlns="http://www.w3.org/2000/svg">
+          <path class="pi-arc" d="M 30 130 Q 150 60 270 130" fill="none" stroke="#dbe7fb" stroke-width="2"/>
+
+          <circle class="pi-sparkle-dot" cx="60" cy="70" r="4" fill="#cfe0fb"/>
+          <circle class="pi-sparkle-dot" cx="60" cy="82" r="2.5" fill="#cfe0fb"/>
+          <g class="pi-sparkle-plus" stroke="#cfe0fb" stroke-width="2" stroke-linecap="round">
+            <line x1="228" y1="90" x2="238" y2="90"/>
+            <line x1="233" y1="85" x2="233" y2="95"/>
+          </g>
+
+          <g class="pi-person">
+            <circle class="pi-circle" cx="150" cy="80" r="46" fill="#e9f1ff"/>
+            <g stroke="#3b6ef0" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="150" cy="64" r="15"/>
+              <path d="M 122 108 Q 122 82 150 82 Q 178 82 178 108"/>
+            </g>
+          </g>
+
+          <g class="pi-bubble">
+            <path d="M 190 30 Q 190 16 204 16 L 232 16 Q 246 16 246 30 L 246 42 Q 246 56 232 56 L 214 56 L 202 66 L 204 56 L 204 56 Q 190 56 190 42 Z"
+                  fill="#ffffff" stroke="#3b6ef0" stroke-width="3"/>
+            <circle class="pi-dot1" cx="209" cy="36" r="2.6" fill="#3b6ef0"/>
+            <circle class="pi-dot2" cx="218" cy="36" r="2.6" fill="#3b6ef0"/>
+            <circle class="pi-dot3" cx="227" cy="36" r="2.6" fill="#3b6ef0"/>
+          </g>
+        </svg>
+      </div>
+      <h3>講者資訊籌備中</h3>
+      <p>
+        講者資訊籌備中，<br>
+        完整資訊將於定期公告！
+      </p>
+    </div>
+  </div>
+</section>
+</body>
+</html>
 
     <section id="exhibition">
       <div class="container">
@@ -1516,7 +1573,6 @@
           <div>
             <div class="section-kicker">Technology and Achievement Exhibition</div>
            <h2>技術暨成果展示</h2>
-            <p class="section-desc" style="color:red;">這裡需要放哪些項目以及需要刪除哪些?。</p>
           </div>
         </div>
 
@@ -1524,7 +1580,7 @@
           <article class="zone">
             <img src="gohakka_KIWI.png" alt="Go Hakka 標誌" style="width:40px; height:40px; object-fit:contain;">
             <h3>智慧客家實驗室成果展</h3>
-            <p class="section-desc" style="color:red;">新書?HAKKAGPT、TALKA、桃園大客家 AI 學習平台、客語 AI 共創平台....等，需要展示哪些成果?會使用超連結，方便使用者點選。</p>
+            <p>展出內容規劃中，將陸續公開更新</p>
           </article>
           <article class="zone">
             <img src="gohakka_KIWI.png" alt="Go Hakka 標誌" style="width:40px; height:40px; object-fit:contain;">
@@ -1564,14 +1620,15 @@
           
         </div>
       </div>
+      </div>
     </section>
 
     <section id="forum">
       <div class="container">
         <div class="section-head">
           <div>
-           
-           
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1598,8 +1655,6 @@
 </a>
 
 </div>
-          </form>
-        </div>
       </div>
     </section>
 
@@ -1637,8 +1692,10 @@
     </p>
   </article>
 </div>
+      </div>
+    </section>
 
-  <section id="downloads">
+    <section id="downloads">
       <div class="container">
         <div class="section-head">
           <div>
