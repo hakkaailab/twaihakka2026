@@ -1084,29 +1084,41 @@
     <img src="banner.png" alt="Banner" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; display:block;">
   </section>
 
-  <!-- 2. 導覽列（移到 Banner 下方） -->
-  <header>
-    <div class="topbar">
-      <a class="brand" href="#home" aria-label="返回首頁">
-        <div class="brand-mark" aria-hidden="true"></div>
-        <div class="brand-title">
-          <strong>第一屆客家人文科技研討會暨成果展</strong>
-          <span>The 1st Conference on Hakka Humanities and Technology (HHT 2026)</span>
-        </div>
-      </a>
-      <button class="menu-toggle" type="button" aria-label="開啟選單" aria-expanded="false">選單</button>
-      <nav aria-label="主要選單">
-        <a href="#about">關於活動</a>
-        <a href="#dates">重要日期</a>
-        <a href="#cfp">論文徵稿</a>
-        <a href="#program">會議議程</a>
-        <a href="#speakers">專題講者</a>
-        <a href="#exhibition">技術暨成果展示</a>
-        <a href="#registration">報名</a>
-        <a href="#venue">交通資訊</a>
-      </nav>
-    </div>
-  </header>
+<style>
+  .brand-mark,
+  .brand-mark::before,
+  .brand-mark::after {
+    background: none !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    content: "" !important;
+    border: none !important;
+  }
+</style>
+
+<!-- 2. 導覽列（移到 Banner 下方） -->
+<header>
+  <div class="topbar">
+    <a class="brand" href="#home" aria-label="返回首頁">
+      <div class="brand-mark" aria-hidden="true"></div>
+      <div class="brand-title">
+        <strong>第一屆客家人文科技研討會暨成果展</strong>
+        <span>The 1st Conference on Hakka Humanities and Technology (HHT 2026)</span>
+      </div>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="開啟選單" aria-expanded="false">選單</button>
+    <nav aria-label="主要選單">
+      <a href="#about">關於活動</a>
+      <a href="#dates">重要日期</a>
+      <a href="#cfp">論文徵稿</a>
+      <a href="#program">會議議程</a>
+      <a href="#speakers">專題講者</a>
+      <a href="#exhibition">技術暨成果展示</a>
+      <a href="#registration">報名</a>
+      <a href="#venue">交通資訊</a>
+    </nav>
+  </div>
+</header>
 
   <main>
 
