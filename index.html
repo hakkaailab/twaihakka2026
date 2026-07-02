@@ -547,15 +547,16 @@
       margin-top: 18px;
     }
 
-    .tag {
-      background: #edf6fb;
-      color: var(--hakka-blue);
-      border: 1px solid #cde7f7;
-      border-radius: 999px;
-      padding: 9px 12px;
-      font-weight: 700;
-      font-size: 14px;
-    }
+   .tag {
+  background: #edf6fb;
+  color: var(--hakka-blue);
+  border: 1px solid #cde7f7;
+  border-radius: 999px;
+  padding: 9px 12px;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;  
+}
 
     .tabs {
       display: flex;
@@ -606,10 +607,11 @@
 
     .program-time {
       padding: 16px;
-      background: #f8fbfd;
+      background: transparent;
       color: var(--hakka-blue);
       font-weight: 900;
       border-right: 1px solid var(--line);
+      text-align: center;
     }
 
     .program-content {
@@ -1248,7 +1250,7 @@
           </div>
           <div class="date-item">
             <time datetime="2026-10-31">2026.10.31</time>
-            <div><b>早鳥報名截止</b><span>完成與會者、發表者、展示團隊與廠商代表報名。</span></div>
+            <div><b>報名截止</b><span>完成與會者、發表者、展示團隊與廠商代表報名。</span></div>
           </div>
           <div class="date-item">
             <time datetime="2026-11-24">2026.11.24~25</time>
@@ -1291,7 +1293,7 @@
             <h3>投稿類型與審查重點</h3>
             <p><b>投稿類型：</b>一般論文</p>
             <p style="margin-top:12px;"><b>審查重點：</b>主題相關性、研究方法或系統設計完整性、客語與客家文化貢獻、AI 技術創新性、實務應用與推廣潛力。</p>
-            <p style="margin-top:12px;"><b>發表形式：</b>口頭發表、海報發表、系統展示、學生專題展示。</p>
+            <p style="margin-top:12px;"><b>發表形式：</b>口頭發表、海報發表。</p>
           </article>
         </div>
 
@@ -1299,173 +1301,294 @@
       </div>
     </section>
 
-    <section id="program">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">Program</div>
-            <h2>會議議程</h2>
-            <p class="section-desc">兩日活動包含開幕式、專題演講、校際學術研討會、跨院師生成果展、技術產品展示與技術論壇。</p>
-          </div>
-        </div>
+    <!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>會議議程（暫定版）</title>
+<style>
+  :root{
+    --navy:#12305c;
+    --navy-deep:#0c2246;
+    --text:#1f2937;
+    --muted:#6b7280;
+    --line:#e5e7eb;
+    --warn-bg:#fff7e6;
+    --warn-border:#f0c36d;
+    --warn-text:#8a5a00;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:#f4f6f9;
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    color:var(--text);
+  }
+  .container{max-width:960px;margin:0 auto;padding:48px 24px 80px;}
+  .section-kicker{font-size:12px;letter-spacing:.12em;font-weight:700;color:var(--muted);}
+  h2{font-size:32px;margin:8px 0 8px;color:var(--navy-deep);}
+  .section-desc{color:var(--muted);font-size:15px;margin:0 0 24px;line-height:1.7;}
 
-        <div class="tabs" role="tablist" aria-label="議程日期選擇">
-          <button class="tab-button active" type="button" data-tab="day1" role="tab" aria-selected="true">第一天 11/24</button>
-          <button class="tab-button" type="button" data-tab="day2" role="tab" aria-selected="false">第二天 11/25</button>
-        </div>
+  .program-notice{
+    display:flex;align-items:flex-start;gap:10px;
+    background:var(--warn-bg);border:1px solid var(--warn-border);color:var(--warn-text);
+    padding:14px 18px;border-radius:10px;font-size:14px;line-height:1.6;margin-bottom:28px;
+  }
+  .program-notice .icon{font-size:18px;line-height:1.2;}
+  .program-notice .update-date{display:block;font-size:12px;opacity:.75;margin-top:2px;}
 
-        <div class="program-panel active" id="day1" role="tabpanel">
-          <div class="program-row">
-            <div class="program-time">09:00–09:30</div>
-            <div class="program-content"><b>報到</b><span>與會者報到、領取資料。</span></div>
-            <div class="program-content"><b>Registration</b><span>Check-in and materials pickup.</span></div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">09:30–10:00</div>
-            <div class="program-content"><b>開幕式</b><span>貴賓致詞、活動說明。</span></div>
-            <div class="program-content"><b>Opening Ceremony</b><span>Welcome remarks and introduction.</span></div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">10:00–11:00</div>
-            <div class="program-content"><b>專題演講（一）</b><span>AI 與語言科技發展趨勢。</span></div>
-            <div class="program-content"><b>Keynote 1</b><span>AI and language technology trends.</span></div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">11:00–12:00</div>
-            <div class="program-content"><b>專題演講（二）</b><span>大型語言模型與生成式 AI 應用。</span></div>
-            <div class="program-content"><b>Keynote 2</b><span>Large language models and generative AI.</span></div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">12:00–13:30</div>
-            <div class="program-content"><b>午餐與交流</b></div>
-            <div class="program-content"><b>Lunch & networking.</b></div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">13:30–14:30</div>
-            <div class="program-content"><b>專題演講（三）</b><span>客語 AI 產業應用實務。</span></div>
-            <div class="program-content"><b>Keynote 3</b><span>Industrial applications of Hakka AI.</span></div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">14:30–16:00</div>
-            <div class="program-content"><b>校際學術研討會（一）</b><span>客語語料庫建置與語言模型發展。</span></div>
-            <div class="program-content"><b>Paper Session A</b><span>Corpora and language models.</span></div>
-          </div>
-           <div class="program-row">
-            <div class="program-time">16:00–16:20</div>
-            <div class="program-content"><b>茶敘</b><span></span></div>
-            <div class="program-content"><b>Tea reception</b><span></span></div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">16:20–17:30</div>
-            <div class="program-content"><b>校際學術研討會（二）</b><span>文化轉譯與 AI 應用。</span></div>
-            <div class="program-content"><b>Paper Session B</b><span>Cultural translation and AI applications.</span></div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">17:30–18:00</div>
-            <div class="program-content"><b>綜合座談與交流</b><span>與談、提問與討論。</span></div>
-            <div class="program-content"><b>Panel Discussion</b><span>Discussion and networking.</span></div>
-          </div>
-        </div>
+  .tabs{display:flex;gap:8px;margin-bottom:20px;}
+  .tab-button{
+    border:1px solid var(--line);background:#fff;color:var(--navy);
+    padding:8px 20px;border-radius:999px;font-weight:600;font-size:14px;cursor:pointer;
+  }
+  .tab-button.active{background:var(--navy);color:#fff;border-color:var(--navy);}
 
-        <div class="program-panel" id="day2" role="tabpanel">
-          <div class="program-row">
-            <div class="program-time">08:30–09:00</div>
-            <div class="program-content"><b>報到</b><span>A 會場、B 會場同步報到。</span></div>
-            <div class="program-content"><b>Registration</b><span>Check-in.</span></div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">09:00–09:30</div>
-            <div class="program-content"><b>成果展開幕暨導覽</b><span></span></div>
-            <div class="program-content"><b>Exhibition Opening, Guided Tour</b><span></span></div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">09:30–10:30</div>
-            <div class="program-content">
-              <b>A 會場：專題演講（四）</b><span>文化與資訊素養。</span>
-              <div style="margin-top:8px; padding-top:8px; border-top:1px dashed #d1d5db;">
-                <b style="display:block;">B 會場：成果展示</b><span>HAKKAGPT、TALKA、桃園大客家、客語 AI 共創平台。</span>
-              </div>
-            </div>
-            <div class="program-content">
-              <b>A Venue: Keynote Speech (4)</b><span>Cultural and Information Literacy.</span>
-              <div style="margin-top:8px; padding-top:8px; border-top:1px dashed #d1d5db;">
-                <b style="display:block;">Venue B: Exhibition</b><span>HAKKAGPT, TALKA, Taoyuan Big Hakka, and the Hakka AI Co-Creation Platform.</span>
-              </div>
-            </div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">10:30–11:30</div>
-            <div class="program-content">
-              <b>A 會場：專題演講（五）</b><span>生成式 AI 與客家文化復振應用。</span>
-              <div style="margin-top:8px; padding-top:8px; border-top:1px dashed #d1d5db;">
-                <b style="display:block;">B 會場：展示與解說</b><span>Generative AI and Hakka Culture Revitalization Applications.</span>
-              </div>
-            </div>
-            <div class="program-content">
-              <b>Venue A: Keynote (5)</b><span>Generative AI and Hakka Culture Revitalization Applications.</span>
-              <div style="margin-top:8px; padding-top:8px; border-top:1px dashed #d1d5db;">
-                <b style="display:block;">Venue B: Exhibition & Guided Tour</b><span>Cross-college faculty and student research showcase.</span>
-              </div>
-            </div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">11:30–12:00</div>
-            <div class="program-content"><b>技術分享</b><span>智慧客家實驗室成果展示。</span></div>
-            <div class="program-content"><b>Tech Sharing</b><span>Smart Hakka Lab demo.</span></div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">12:00–13:30</div>
-            <div class="program-content"><b>午餐與交流</b><span></span></div>
-            <div class="program-content"><b>Lunch & Networking</b><span></span></div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">13:30–14:30</div>
-            <div class="program-content">
-              <b>A 會場：專題演講（六）</b><span>AI 專業客語語料庫與學習系統。</span>
-              <div style="margin-top:8px; padding-top:8px; border-top:1px dashed #d1d5db;">
-                <b style="display:block;">B 會場：技術產品展示</b><span>客語 AI 實體機器人、語音辨識與語音合成系統。</span>
-              </div>
-            </div>
-            <div class="program-content">
-              <b>Venue A: Keynote (6)</b><span>AI-based Hakka Corpus and Learning System.</span>
-              <div style="margin-top:8px; padding-top:8px; border-top:1px dashed #d1d5db;">
-                <b style="display:block;">Venue B: Technology Product Showcase</b><span>Hakka AI robot, speech recognition, and speech synthesis system.</span>
-              </div>
-            </div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">14:30–15:30</div>
-            <div class="program-content">
-              <b>A 會場：專題演講（七）</b><span>AI 系統架構與應用。</span>
-              <div style="margin-top:8px; padding-top:8px; border-top:1px dashed #d1d5db;">
-                <b style="display:block;">B 會場：互動體驗</b><span>系統實作、平台體驗與交流。</span>
-              </div>
-            </div>
-            <div class="program-content">
-              <b>Venue A: Keynote</b><span>AI System Architecture and Applications.</span>
-              <div style="margin-top:8px; padding-top:8px; border-top:1px dashed #d1d5db;">
-                <b style="display:block;">Venue B: Interactive Experience</b><span>System demonstrations, hands-on platform trials, and networking.</span>
-              </div>
-            </div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">15:30–15:50</div>
-            <div class="program-content"><b>茶敘</b><span></span></div>
-            <div class="program-content"><b>Tea reception</b><span></span></div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">15:50–17:00</div>
-            <div class="program-content"><b>技術論壇與綜合座談</b><span>客語 AI 未來發展與跨域整合。</span></div>
-            <div class="program-content"><b>Technology Forum</b><span>Future development and collaboration.</span></div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">17:00–17:30</div>
-            <div class="program-content"><b>閉幕式與成果回饋</b><span>成果回顧、意見回饋與後續合作。</span></div>
-            <div class="program-content"><b>Closing Ceremony</b><span>Feedback and next steps.</span></div>
-          </div>
+  .program-panel{display:none;}
+  .program-panel.active{display:block;}
+
+  .program-row{
+    display:grid;grid-template-columns:150px 1fr 1fr;gap:16px;
+    background:#fff;padding:18px 20px;border-bottom:1px solid var(--line);
+  }
+  .program-row:first-child{border-top-left-radius:14px;border-top-right-radius:14px;}
+  .program-row:last-child{border-bottom-left-radius:14px;border-bottom-right-radius:14px;border-bottom:none;}
+
+  .program-time{font-weight:700;color:var(--navy);font-size:14px;}
+  .program-content b{display:block;font-size:15px;color:var(--text);margin-bottom:4px;}
+  .program-content span{font-size:13px;color:var(--muted);line-height:1.6;}
+
+  .badge-tbd{
+    display:inline-block;margin-left:6px;font-size:11px;font-weight:500;
+    padding:2px 7px;border-radius:5px;background:#f3f4f6;color:#6b7280;
+    border:1px dashed #d1d5db;vertical-align:middle;
+  }
+
+  .program-row.tentative{
+    background:repeating-linear-gradient(45deg,#fafafa,#fafafa 10px,#f5f5f5 10px,#f5f5f5 20px);
+  }
+  .program-row.tentative .program-content b,
+  .program-row.tentative .program-content span{opacity:.85;}
+
+  .sub-block{margin-top:8px;padding-top:8px;border-top:1px dashed #d1d5db;}
+  .sub-block b{display:block;}
+
+  @media (max-width:640px){
+    .program-row{grid-template-columns:1fr;gap:6px;}
+    .program-time{margin-bottom:4px;}
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="section-kicker">PROGRAM</div>
+  <h2>會議議程</h2>
+  <p class="section-desc">兩日活動包含開幕式、專題演講、校際學術研討會、跨院師生成果展、技術產品展示與技術論壇。</p>
+
+  <div class="program-notice">
+    <span class="icon">⚠️</span>
+    <div>
+      本議程時間、講者、主題與場次均可能異動，實際內容以官網最新公告為準。
+      <span class="update-date">最後更新：2026/07/02</span>
+    </div>
+  </div>
+
+  <div class="tabs" role="tablist" aria-label="議程日期選擇">
+    <button class="tab-button active" type="button" data-tab="day1" role="tab" aria-selected="true">11/24</button>
+    <button class="tab-button" type="button" data-tab="day2" role="tab" aria-selected="false">11/25</button>
+  </div>
+
+  <!-- ===== DAY 1 ===== -->
+  <div class="program-panel active" id="day1" role="tabpanel">
+
+    <div class="program-row">
+      <div class="program-time">09:00–09:30</div>
+      <div class="program-content"><b>報到</b><span>與會者報到、領取資料。</span></div>
+      <div class="program-content"><b>Registration</b><span>Check-in and materials pickup.</span></div>
+    </div>
+
+    <div class="program-row">
+      <div class="program-time">09:30–10:00</div>
+      <div class="program-content"><b>開幕式</b><span>貴賓致詞、活動說明。</span></div>
+      <div class="program-content"><b>Opening Ceremony</b><span>Welcome remarks and introduction.</span></div>
+    </div>
+
+    <div class="program-row tentative">
+      <div class="program-time">10:00–11:00</div>
+      <div class="program-content"><b>專題演講（一）<span class="badge-tbd">暫定</span></b><span>AI 與語言科技發展趨勢。</span></div>
+      <div class="program-content"><b>Keynote 1<span class="badge-tbd">TBD</span></b><span>AI and language technology trends.</span></div>
+    </div>
+
+    <div class="program-row tentative">
+      <div class="program-time">11:00–12:00</div>
+      <div class="program-content"><b>專題演講（二）<span class="badge-tbd">暫定</span></b><span>大型語言模型與生成式 AI 應用。</span></div>
+      <div class="program-content"><b>Keynote 2<span class="badge-tbd">TBD</span></b><span>Large language models and generative AI.</span></div>
+    </div>
+
+    <div class="program-row">
+      <div class="program-time">12:00–13:30</div>
+      <div class="program-content"><b>午餐與交流</b></div>
+      <div class="program-content"><b>Lunch &amp; networking.</b></div>
+    </div>
+
+    <div class="program-row tentative">
+      <div class="program-time">13:30–14:30</div>
+      <div class="program-content"><b>專題演講（三）<span class="badge-tbd">暫定</span></b><span>客語 AI 產業應用實務。</span></div>
+      <div class="program-content"><b>Keynote 3<span class="badge-tbd">TBD</span></b><span>Industrial applications of Hakka AI.</span></div>
+    </div>
+
+    <div class="program-row tentative">
+      <div class="program-time">14:30–16:00</div>
+      <div class="program-content"><b>校際學術研討會（一）<span class="badge-tbd">暫定</span></b><span>客語語料庫建置與語言模型發展。</span></div>
+      <div class="program-content"><b>Paper Session A<span class="badge-tbd">TBD</span></b><span>Corpora and language models.</span></div>
+    </div>
+
+    <div class="program-row">
+      <div class="program-time">16:00–16:20</div>
+      <div class="program-content"><b>茶敘</b><span></span></div>
+      <div class="program-content"><b>Tea reception</b><span></span></div>
+    </div>
+
+    <div class="program-row tentative">
+      <div class="program-time">16:20–17:30</div>
+      <div class="program-content"><b>校際學術研討會（二）<span class="badge-tbd">暫定</span></b><span>文化轉譯與 AI 應用。</span></div>
+      <div class="program-content"><b>Paper Session B<span class="badge-tbd">TBD</span></b><span>Cultural translation and AI applications.</span></div>
+    </div>
+
+    <div class="program-row tentative">
+      <div class="program-time">17:30–18:00</div>
+      <div class="program-content"><b>綜合座談與交流<span class="badge-tbd">暫定</span></b><span>與談、提問與討論。</span></div>
+      <div class="program-content"><b>Panel Discussion<span class="badge-tbd">TBD</span></b><span>Discussion and networking.</span></div>
+    </div>
+
+  </div>
+
+  <!-- ===== DAY 2 ===== -->
+  <div class="program-panel" id="day2" role="tabpanel">
+
+    <div class="program-row">
+      <div class="program-time">08:30–09:00</div>
+      <div class="program-content"><b>報到</b><span>A 會場、B 會場同步報到。</span></div>
+      <div class="program-content"><b>Registration</b><span>Check-in.</span></div>
+    </div>
+
+    <div class="program-row">
+      <div class="program-time">09:00–09:30</div>
+      <div class="program-content"><b>成果展開幕暨導覽</b><span></span></div>
+      <div class="program-content"><b>Exhibition Opening, Guided Tour</b><span></span></div>
+    </div>
+
+    <div class="program-row tentative">
+      <div class="program-time">09:30–10:30</div>
+      <div class="program-content">
+        <b>A 會場：專題演講（四）<span class="badge-tbd">暫定</span></b><span>文化與資訊素養。</span>
+        <div class="sub-block">
+          <b>B 會場：成果展示<span class="badge-tbd">暫定</span></b><span>HAKKAGPT、TALKA、桃園大客家、客語 AI 共創平台。</span>
         </div>
       </div>
-    </section>
+      <div class="program-content">
+        <b>A Venue: Keynote Speech (4)<span class="badge-tbd">TBD</span></b><span>Cultural and Information Literacy.</span>
+        <div class="sub-block">
+          <b>Venue B: Exhibition<span class="badge-tbd">TBD</span></b><span>HAKKAGPT, TALKA, Taoyuan Big Hakka, and the Hakka AI Co-Creation Platform.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="program-row tentative">
+      <div class="program-time">10:30–11:30</div>
+      <div class="program-content">
+        <b>A 會場：專題演講（五）<span class="badge-tbd">暫定</span></b><span>生成式 AI 與客家文化復振應用。</span>
+        <div class="sub-block">
+          <b>B 會場：展示與解說<span class="badge-tbd">暫定</span></b><span>跨院師生成果展示。</span>
+        </div>
+      </div>
+      <div class="program-content">
+        <b>Venue A: Keynote (5)<span class="badge-tbd">TBD</span></b><span>Generative AI and Hakka Culture Revitalization Applications.</span>
+        <div class="sub-block">
+          <b>Venue B: Exhibition &amp; Guided Tour<span class="badge-tbd">TBD</span></b><span>Cross-college faculty and student research showcase.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="program-row tentative">
+      <div class="program-time">11:30–12:00</div>
+      <div class="program-content"><b>技術分享<span class="badge-tbd">暫定</span></b><span>智慧客家實驗室成果展示。</span></div>
+      <div class="program-content"><b>Tech Sharing<span class="badge-tbd">TBD</span></b><span>Smart Hakka Lab demo.</span></div>
+    </div>
+
+    <div class="program-row">
+      <div class="program-time">12:00–13:30</div>
+      <div class="program-content"><b>午餐與交流</b><span></span></div>
+      <div class="program-content"><b>Lunch &amp; Networking</b><span></span></div>
+    </div>
+
+    <div class="program-row tentative">
+      <div class="program-time">13:30–14:30</div>
+      <div class="program-content">
+        <b>A 會場：專題演講（六）<span class="badge-tbd">暫定</span></b><span>AI 專業客語語料庫與學習系統。</span>
+        <div class="sub-block">
+          <b>B 會場：技術產品展示<span class="badge-tbd">暫定</span></b><span>客語 AI 實體機器人、語音辨識與語音合成系統。</span>
+        </div>
+      </div>
+      <div class="program-content">
+        <b>Venue A: Keynote (6)<span class="badge-tbd">TBD</span></b><span>AI-based Hakka Corpus and Learning System.</span>
+        <div class="sub-block">
+          <b>Venue B: Technology Product Showcase<span class="badge-tbd">TBD</span></b><span>Hakka AI robot, speech recognition, and speech synthesis system.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="program-row tentative">
+      <div class="program-time">14:30–15:30</div>
+      <div class="program-content">
+        <b>A 會場：專題演講（七）<span class="badge-tbd">暫定</span></b><span>AI 系統架構與應用。</span>
+        <div class="sub-block">
+          <b>B 會場：互動體驗<span class="badge-tbd">暫定</span></b><span>系統實作、平台體驗與交流。</span>
+        </div>
+      </div>
+      <div class="program-content">
+        <b>Venue A: Keynote<span class="badge-tbd">TBD</span></b><span>AI System Architecture and Applications.</span>
+        <div class="sub-block">
+          <b>Venue B: Interactive Experience<span class="badge-tbd">TBD</span></b><span>System demonstrations, hands-on platform trials, and networking.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="program-row">
+      <div class="program-time">15:30–15:50</div>
+      <div class="program-content"><b>茶敘</b><span></span></div>
+      <div class="program-content"><b>Tea reception</b><span></span></div>
+    </div>
+
+    <div class="program-row tentative">
+      <div class="program-time">15:50–17:00</div>
+      <div class="program-content"><b>技術論壇與綜合座談<span class="badge-tbd">暫定</span></b><span>客語 AI 未來發展與跨域整合。</span></div>
+      <div class="program-content"><b>Technology Forum<span class="badge-tbd">TBD</span></b><span>Future development and collaboration.</span></div>
+    </div>
+
+    <div class="program-row tentative">
+      <div class="program-time">17:00–17:30</div>
+      <div class="program-content"><b>閉幕式與成果回饋<span class="badge-tbd">暫定</span></b><span>成果回顧、意見回饋與後續合作。</span></div>
+      <div class="program-content"><b>Closing Ceremony<span class="badge-tbd">TBD</span></b><span>Feedback and next steps.</span></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.tab-button').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.tab-button').forEach(b=>{
+        b.classList.remove('active'); b.setAttribute('aria-selected','false');
+      });
+      document.querySelectorAll('.program-panel').forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active'); btn.setAttribute('aria-selected','true');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
 
 <!DOCTYPE html>
 <html lang="zh-Hant">
