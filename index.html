@@ -1128,23 +1128,23 @@
 <section id="countdown-section">
   <div class="container">
     <div class="countdown-wrap">
-      <h2 class="countdown-title" style="font-size: 22px; margin-bottom: 20px;">距離活動開始</h2>
-      <div class="countdown" id="countdown" style="display: flex; gap: 16px; justify-content: center;">
-        <div class="count-item" style="min-width: 130px; padding: 24px 20px; border-radius: 12px; text-align: center;">
-          <strong id="days" style="font-size: 60px; line-height: 1; display: block;">--</strong>
-          <span style="font-size: 20px; margin-top: 8px; display: block;">天</span>
+      <h2 class="countdown-title">距離活動開始</h2>
+      <div class="countdown" id="countdown">
+        <div class="count-item">
+          <strong id="days">--</strong>
+          <span>天</span>
         </div>
-        <div class="count-item" style="min-width: 130px; padding: 24px 20px; border-radius: 12px; text-align: center;">
-          <strong id="hours" style="font-size: 60px; line-height: 1; display: block;">--</strong>
-          <span style="font-size: 20px; margin-top: 8px; display: block;">時</span>
+        <div class="count-item">
+          <strong id="hours">--</strong>
+          <span>時</span>
         </div>
-        <div class="count-item" style="min-width: 130px; padding: 24px 20px; border-radius: 12px; text-align: center;">
-          <strong id="minutes" style="font-size: 60px; line-height: 1; display: block;">--</strong>
-          <span style="font-size: 20px; margin-top: 8px; display: block;">分</span>
+        <div class="count-item">
+          <strong id="minutes">--</strong>
+          <span>分</span>
         </div>
-        <div class="count-item" style="min-width: 130px; padding: 24px 20px; border-radius: 12px; text-align: center;">
-          <strong id="seconds" style="font-size: 60px; line-height: 1; display: block;">--</strong>
-          <span style="font-size: 20px; margin-top: 8px; display: block;">秒</span>
+        <div class="count-item">
+          <strong id="seconds">--</strong>
+          <span>秒</span>
         </div>
       </div>
     </div>
@@ -1203,7 +1203,7 @@
   .quick-info b { color: #1a3a5c; }
   </style>
 
-    <section id="about">
+<section id="about">
       <div class="container">
         <div class="section-head">
           <div>
@@ -1212,12 +1212,25 @@
             <p class="section-desc">隨著人工智慧與語言科技快速發展，低資源語言的保存、傳承與創新應用逐漸受到國際重視。客語作為臺灣重要的文化資產，如何結合人工智慧技術促進語言學習、文化傳播與數位典藏，已成為客家研究與資訊科技跨域合作的重要方向。為促進學術交流與跨領域合作，第一屆客家人文科技研討會 The 1st Conference on Hakka Humanities and Technology (HHT 2026)以「人工智慧轉譯客家文化，語言科技開展客語學習、文化傳播與低資源語言創新應用」為核心理念，建構跨校、跨院之客語人工智慧研究與應用交流平台，串聯人文、資訊、教育與語言科技等研究能量，共同探索客家文化的數位創新與永續發展。
 
 本研討會誠摯邀請學者、研究人員、學生及產業界人士踴躍投稿，徵稿主題包含客語人工智慧、低資源語言技術、客語語料庫建置、大型語言模型（LLM）、ASR語音辨識、TTS語音合成、華客／客華翻譯、RAG與GraphRAG、生成式AI創作、客家文化典藏、資訊視覺化、AI倫理與資料授權等相關研究與應用成果，期待透過多元觀點與跨域交流，共同推動客家人文科技的發展。</p>
-         
-      
-        </div>
 
-        
-      </div>
+            <!-- 新增：主辦/補助/指導單位 -->
+            <div class="org-list">
+              <div class="org-row">
+                <span class="org-pill">主辦單位</span>
+                <span class="org-text">國立聯合大學客家研究學院</span>
+              </div>
+              <div class="org-row">
+                <span class="org-pill">補助單位</span>
+                <span class="org-text">客家委員會、聯合工商教育基金會</span>
+              </div>
+              <div class="org-row">
+                <span class="org-pill">指導單位</span>
+                <span class="org-text">客家委員會、國立聯合大學、聯合工商教育基金會</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1649,6 +1662,105 @@
   @keyframes pi-draw {
     to { stroke-dashoffset: 0; }
   }
+  <style>
+  /* ... 原本所有的样式都保留不动 ... */
+
+  .countdown-title{
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .countdown{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .count-item{
+    flex: 1 1 130px;
+    max-width: 130px;
+    padding: 24px 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .count-item strong{
+    font-size: 60px;
+    line-height: 1;
+    display: block;
+  }
+
+  .count-item span{
+    font-size: 20px;
+    margin-top: 8px;
+    display: block;
+  }
+
+  @media (max-width: 480px){
+    .countdown{ gap: 8px; }
+    .count-item{ flex: 1 1 70px; max-width: 90px; padding: 14px 8px; }
+    .count-item strong{ font-size: 32px; }
+    .count-item span{ font-size: 13px; margin-top: 4px; }
+  }
+
+  @media (max-width: 360px){
+    .count-item strong{ font-size: 26px; }
+    .count-item span{ font-size: 11px; }
+  }
+</style>
+<head>
+  <style>
+    .section-kicker { ... }
+    .section-desc { ... }
+    .section-head { ... }
+
+    /* 👇 加在这里 */
+    .org-list{
+      margin-top: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .org-row{
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .org-pill{
+      flex-shrink: 0;
+      background: #5b8def;
+      color: #fff;
+      font-weight: 700;
+      padding: 8px 20px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .org-text{
+      font-weight: 700;
+      font-size: 1rem;
+      color: #1a2540;
+    }
+
+    @media (max-width: 600px){
+      .org-row{
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+
+
+
+
+
+
 </style>
 </head>
 <body>
