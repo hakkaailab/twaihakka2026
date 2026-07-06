@@ -1666,32 +1666,72 @@
   /* ... 原本所有的样式都保留不动 ... */
 
   .countdown-title{
-    font-size: 22px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+}
 
+.countdown{
+  display: flex;
+  flex-wrap: nowrap;        /* 永遠不換行，桌機手機都一樣 */
+  gap: 16px;
+  justify-content: center;
+}
+
+.count-item{
+  flex: 1 1 0;              /* 讓四個平均分配剩餘空間 */
+  max-width: 130px;
+  padding: 24px 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-sizing: border-box;
+  min-width: 0;             /* 允許縮小，避免內容撐開容器 */
+}
+
+.count-item strong{
+  font-size: 60px;
+  line-height: 1;
+  display: block;
+}
+
+.count-item span{
+  font-size: 20px;
+  margin-top: 8px;
+  display: block;
+}
+
+/* 手機板：縮小尺寸，但仍然維持一排四個 */
+@media (max-width: 480px){
   .countdown{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
+    gap: 6px;
   }
-
   .count-item{
-    flex: 1 1 130px;
-    max-width: 130px;
-    padding: 24px 20px;
-    border-radius: 12px;
-    text-align: center;
-    box-sizing: border-box;
+    padding: 10px 4px;
   }
-
   .count-item strong{
-    font-size: 60px;
-    line-height: 1;
-    display: block;
+    font-size: 26px;
   }
+  .count-item span{
+    font-size: 11px;
+    margin-top: 2px;
+  }
+}
+
+/* 極窄螢幕（iPhone SE 等）再縮小一點 */
+@media (max-width: 360px){
+  .countdown{
+    gap: 4px;
+  }
+  .count-item{
+    padding: 8px 2px;
+  }
+  .count-item strong{
+    font-size: 22px;
+  }
+  .count-item span{
+    font-size: 10px;
+  }
+}
 
   .count-item span{
     font-size: 20px;
@@ -1753,6 +1793,45 @@
         flex-wrap: wrap;
       }
     }
+    .org-list{
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .org-row{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .org-pill{
+    flex-shrink: 0;
+    background: #5b8def;
+    color: #fff;
+    font-weight: 700;
+    padding: 8px 20px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .org-text{
+    font-weight: 700;
+    font-size: 1rem;
+    color: #1a2540;
+  }
+
+  @media (max-width: 600px){
+    .org-row{
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  }
+
+
   </style>
 </head>
 
