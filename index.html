@@ -1344,21 +1344,29 @@
       display:block;font-size:18px;font-weight:900;margin-bottom:2px;color:#fff;
     }
 
-/* 兩日展出（放在議程表下方） */
-#program .expo-note{
-  display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:center;
-  background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);
-  padding:16px 22px;margin-top:16px;
-  border-left:5px solid var(--warm-gold);
-}
-#program .expo-note .expo-time{font-weight:900;color:var(--hakka-blue);font-size:15px;line-height:1.5;}
-#program .expo-note .expo-time small{display:block;font-weight:600;color:var(--muted);font-size:13px;}
-#program .expo-note b{display:block;color:var(--deep-blue);font-size:15px;margin-bottom:2px;}
-#program .expo-note span{color:var(--muted);font-size:13px;}
-
-@media (max-width:680px){
-  #program .expo-note{grid-template-columns:1fr;gap:4px;}
-}
+    /* 兩日展出：有框、與議程表同風格 */
+    #program .expo-box{
+      display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:center;
+      background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);
+      box-shadow:var(--shadow);
+      padding:20px 24px;
+      margin:28px 0 28px;
+    }
+    #program .expo-box .expo-time{
+      font-weight:900;color:var(--hakka-blue);font-size:15px;line-height:1.6;
+    }
+    #program .expo-box .expo-time small{
+      display:block;font-weight:600;color:var(--muted);font-size:13px;
+    }
+    #program .expo-box .expo-tag{
+      display:inline-block;margin-bottom:6px;
+      background:var(--soft-gold);color:#7a4c00;font-weight:800;font-size:13px;
+      padding:3px 12px;border-radius:999px;
+    }
+    #program .expo-box b{
+      display:block;color:var(--deep-blue);font-size:16px;margin-bottom:2px;
+    }
+    #program .expo-box span.loc{color:var(--muted);font-size:14px;}
 
     /* 分頁按鈕 */
     #program .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
@@ -1395,6 +1403,7 @@
       #program .program-row{grid-template-columns:1fr;gap:4px;}
       #program .program-time{margin-bottom:2px;}
       #program .program-notice{padding:16px;font-size:15px;}
+      #program .expo-box{grid-template-columns:1fr;gap:6px;padding:16px 18px;}
     }
   </style>
 
@@ -1415,11 +1424,12 @@
       </div>
     </div>
 
-    <div class="expo-banner">
-      <span class="expo-tag">兩日展出</span>
+    <div class="expo-box">
+      <div class="expo-time">11/24～11/25<small>09:00–17:00</small></div>
       <div>
-        <b>客家 AI 生態系成果展</b>｜11/24～11/25　09:00–17:00<br>
-        地點：藝術中心蓮荷藝文空間
+        <span class="expo-tag">兩日展出</span>
+        <b>客家 AI 生態系成果展</b>
+        <span class="loc">地點：藝術中心蓮荷藝文空間</span>
       </div>
     </div>
 
