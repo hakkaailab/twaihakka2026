@@ -1344,17 +1344,21 @@
       display:block;font-size:18px;font-weight:900;margin-bottom:2px;color:#fff;
     }
 
-    /* 兩日展出橫幅 */
-    #program .expo-banner{
-      display:flex;align-items:center;gap:16px;flex-wrap:wrap;
-      background:var(--soft-gold);border:1px solid #ffe1a1;color:#704600;
-      border-radius:16px;padding:16px 20px;margin:24px 0 22px;line-height:1.6;
-    }
-    #program .expo-banner .expo-tag{
-      background:var(--hakka-blue);color:#fff;font-weight:800;font-size:14px;
-      padding:6px 14px;border-radius:999px;white-space:nowrap;
-    }
-    #program .expo-banner b{color:var(--deep-blue);}
+/* 兩日展出（放在議程表下方） */
+#program .expo-note{
+  display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:center;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);
+  padding:16px 22px;margin-top:16px;
+  border-left:5px solid var(--warm-gold);
+}
+#program .expo-note .expo-time{font-weight:900;color:var(--hakka-blue);font-size:15px;line-height:1.5;}
+#program .expo-note .expo-time small{display:block;font-weight:600;color:var(--muted);font-size:13px;}
+#program .expo-note b{display:block;color:var(--deep-blue);font-size:15px;margin-bottom:2px;}
+#program .expo-note span{color:var(--muted);font-size:13px;}
+
+@media (max-width:680px){
+  #program .expo-note{grid-template-columns:1fr;gap:4px;}
+}
 
     /* 分頁按鈕 */
     #program .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
