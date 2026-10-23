@@ -25,56 +25,39 @@
       --max: 1180px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
     }
 
     body {
-  margin: 0;
-  font-family: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", Arial, sans-serif;
-  color: var(--ink);
-  background: var(--mist);
-  line-height: 1.75;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-    a {
-      color: inherit;
-      text-decoration: none;
+      margin: 0;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--mist);
+      line-height: 1.75;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+      overflow-wrap: anywhere;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
 
-    .skip-link {
-      position: absolute;
-      left: 16px;
-      top: -60px;
-      background: var(--deep-blue);
-      color: var(--white);
-      padding: 10px 14px;
-      border-radius: 8px;
-      z-index: 1000;
-      transition: top 0.2s ease;
-    }
+    /* ========== Banner ========== */
+    #home { margin: 0; padding: 0; line-height: 0; }
+    #home img { width: 100%; height: auto; }
 
-    .skip-link:focus {
-      top: 16px;
-    }
-
+    /* ========== Header / Nav ========== */
     header {
       position: sticky;
       top: 0;
       z-index: 99;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.94);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(217, 226, 236, 0.82);
     }
@@ -85,60 +68,20 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 14px 22px;
+      padding: 12px 22px;
       gap: 18px;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
 
-    .brand-mark {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      background:
-        radial-gradient(circle at 34% 28%, rgba(255,255,255,0.9) 0 10%, transparent 11%),
-        linear-gradient(135deg, var(--hakka-blue), var(--tech-blue));
-      position: relative;
-      box-shadow: 0 8px 22px rgba(18, 60, 105, 0.26);
-    }
-
-    .brand-mark::after {
-      content: "AI";
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      color: var(--white);
-      font-weight: 900;
-      letter-spacing: 0.03em;
-      font-size: 14px;
-    }
-
-    .brand-title {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.25;
-    }
-
-    .brand-title strong {
-      color: var(--deep-blue);
-      font-size: 15px;
-    }
-
-    .brand-title span {
-      color: var(--muted);
-      font-size: 12px;
-    }
+    .brand-title { display: flex; flex-direction: column; line-height: 1.3; min-width: 0; }
+    .brand-title strong { color: var(--deep-blue); font-size: 15px; }
+    .brand-title span { color: var(--muted); font-size: 12px; }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 3px;
+      gap: 2px;
       flex-wrap: wrap;
       justify-content: flex-end;
     }
@@ -149,11 +92,11 @@
       border-radius: 999px;
       font-size: 14px;
       font-weight: 600;
+      white-space: nowrap;
       transition: 0.18s ease;
     }
 
-    nav a:hover,
-    nav a:focus {
+    nav a:hover, nav a:focus {
       background: var(--soft-gold);
       color: #7a4c00;
       outline: none;
@@ -165,210 +108,22 @@
       background: var(--deep-blue);
       color: var(--white);
       border-radius: 12px;
-      padding: 10px 12px;
+      padding: 10px 14px;
       font-weight: 700;
-      cursor: pointer;
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 16% 18%, rgba(245, 176, 65, 0.34), transparent 24%),
-        radial-gradient(circle at 82% 22%, rgba(57, 143, 123, 0.23), transparent 28%),
-        linear-gradient(140deg, #07192b 0%, #123c69 52%, #1b6ca8 100%);
-      color: var(--white);
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
-      background-size: 42px 42px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.18));
-    }
-
-    .hero-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 86px 22px 68px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
-      gap: 34px;
-      position: relative;
-      z-index: 1;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      gap: 8px;
-      align-items: center;
-      background: rgba(255,255,255,0.13);
-      border: 1px solid rgba(255,255,255,0.28);
-      padding: 8px 12px;
-      border-radius: 999px;
       font-size: 14px;
-      margin-bottom: 18px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 9px;
-      height: 9px;
-      border-radius: 999px;
-      background: var(--warm-gold);
-      box-shadow: 0 0 0 8px rgba(245,176,65,0.18);
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(34px, 5vw, 62px);
-      line-height: 1.12;
-      letter-spacing: -0.02em;
-      font-weight: 900;
-    }
-
-    .hero-subtitle {
-      margin: 20px 0 0;
-      color: rgba(255,255,255,0.88);
-      font-size: clamp(17px, 2vw, 21px);
-      max-width: 770px;
-    }
-
-    .hero-meta {
-      margin-top: 24px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .meta-pill {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.24);
-      border-radius: 999px;
-      padding: 9px 13px;
-      font-weight: 700;
-      color: rgba(255,255,255,0.95);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      border-radius: 999px;
-      padding: 12px 18px;
-      font-weight: 800;
-      border: 1px solid transparent;
       cursor: pointer;
-      transition: 0.18s ease;
+      flex-shrink: 0;
     }
 
-    .btn.primary {
-      background: var(--warm-gold);
-      color: #2d2105;
-      box-shadow: 0 10px 24px rgba(245,176,65,0.34);
-    }
-
-    .btn.secondary {
-      background: rgba(255,255,255,0.12);
-      border-color: rgba(255,255,255,0.34);
-      color: var(--white);
-    }
-
-    .btn.light {
-      background: var(--white);
-      color: var(--hakka-blue);
-      border-color: var(--line);
-    }
-
-    .btn:hover,
-    .btn:focus {
-      transform: translateY(-2px);
-      outline: none;
-    }
-
-    .hero-card {
-      background: rgba(255,255,255,0.13);
-      border: 1px solid rgba(255,255,255,0.26);
-      border-radius: var(--radius-lg);
-      padding: 24px;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.18);
-      backdrop-filter: blur(16px);
-    }
-
-    .countdown-title {
-      margin: 0 0 14px;
-      font-size: 18px;
-      color: rgba(255,255,255,0.92);
-    }
-
-    .countdown {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-
-    .count-item {
-      background: rgba(255,255,255,0.14);
-      border: 1px solid rgba(255,255,255,0.20);
-      border-radius: 16px;
-      text-align: center;
-      padding: 13px 8px;
-    }
-
-    .count-item strong {
-      font-size: 28px;
-      line-height: 1;
-      display: block;
-    }
-
-    .count-item span {
-      font-size: 12px;
-      color: rgba(255,255,255,0.75);
-    }
-
-    .quick-info {
-      display: grid;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .quick-info div {
-      background: rgba(7, 25, 43, 0.24);
-      border-radius: 16px;
-      padding: 12px 14px;
-      border: 1px solid rgba(255,255,255,0.14);
-    }
-
-    .quick-info b {
-      color: #ffe0a1;
-    }
-
-    main {
-       flex: 1;
-    }
+    /* ========== 通用區塊 ========== */
+    main { flex: 1; }
 
     section {
       padding: 48px 22px;
+      scroll-margin-top: 76px;
     }
 
-    .container {
-      max-width: var(--max);
-      margin: 0 auto;
-    }
+    .container { max-width: var(--max); margin: 0 auto; }
 
     .section-head {
       display: flex;
@@ -389,7 +144,7 @@
 
     h2 {
       margin: 0;
-      font-size: clamp(26px, 3vw, 38px);
+      font-size: clamp(24px, 3vw, 38px);
       line-height: 1.25;
       color: var(--deep-blue);
       letter-spacing: -0.015em;
@@ -398,19 +153,13 @@
     .section-desc {
       margin: 10px 0 0;
       color: var(--muted);
-      max-width: 760px;
+      max-width: 860px;
       font-size: 16px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
     }
 
     .grid-2 {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
     }
 
@@ -422,93 +171,65 @@
       box-shadow: 0 14px 30px rgba(13, 41, 67, 0.07);
     }
 
-    .feature-card {
-      position: relative;
-      overflow: hidden;
-      min-height: 230px;
-    }
+    .card h3 { margin: 0 0 10px; color: var(--deep-blue); font-size: 21px; }
+    .card p { margin: 0; color: var(--muted); }
 
-    .feature-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto auto 0;
-      width: 84px;
-      height: 84px;
-      background: var(--soft-gold);
-      border-bottom-right-radius: 100%;
+    /* ========== 倒數計時 ========== */
+    #countdown-section { background: #f0f4f8; padding: 28px 16px; }
+    .countdown-wrap { max-width: 640px; margin: 0 auto; text-align: center; }
+    .countdown-title {
+      font-size: clamp(18px, 4vw, 22px);
+      color: #1a3a5c;
+      margin: 0 0 16px;
     }
-
-    .feature-icon {
-      position: relative;
-      width: 54px;
-      height: 54px;
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      font-size: 26px;
-      background: linear-gradient(135deg, var(--hakka-blue), var(--tech-blue));
-      color: var(--white);
-      margin-bottom: 18px;
+    .countdown {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      gap: clamp(6px, 2vw, 16px);
     }
-
-    .card h3 {
-      margin: 0 0 10px;
-      color: var(--deep-blue);
-      font-size: 21px;
+    .count-item {
+      flex: 1 1 0;
+      min-width: 0;
+      max-width: 130px;
+      background: #1a63b2;
+      color: #fff;
+      border-radius: 12px;
+      padding: clamp(10px, 3vw, 22px) 4px;
+      text-align: center;
     }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-top: 22px;
-    }
-
-    .stat {
-      background: var(--deep-blue);
-      color: var(--white);
-      border-radius: 20px;
-      padding: 20px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .stat::after {
-      content: "";
-      position: absolute;
-      right: -22px;
-      top: -22px;
-      width: 80px;
-      height: 80px;
-      background: rgba(245,176,65,0.24);
-      border-radius: 50%;
-    }
-
-    .stat strong {
+    .count-item strong {
       display: block;
-      font-size: 32px;
+      font-size: clamp(26px, 8vw, 52px);
       line-height: 1.1;
     }
-
-    .stat span {
-      color: rgba(255,255,255,0.75);
-      font-size: 14px;
+    .count-item span {
+      display: block;
+      font-size: clamp(11px, 3vw, 16px);
+      opacity: 0.9;
+      margin-top: 4px;
     }
 
-    .dates {
-      position: relative;
-      display: grid;
-      gap: 14px;
+    /* ========== 關於活動 ========== */
+    .org-list { margin-top: 28px; display: flex; flex-direction: column; gap: 16px; }
+    .org-row { display: flex; align-items: center; gap: 16px; }
+    .org-pill {
+      flex-shrink: 0;
+      background: #5b8def;
+      color: #fff;
+      font-weight: 700;
+      padding: 8px 20px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      white-space: nowrap;
     }
+    .org-text { font-weight: 700; font-size: 1rem; color: #1a2540; }
 
+    /* ========== 重要日期 ========== */
+    .dates { display: grid; gap: 14px; }
     .date-item {
       display: grid;
-      grid-template-columns: 190px 1fr;
+      grid-template-columns: 190px minmax(0, 1fr);
       gap: 16px;
       align-items: center;
       background: var(--white);
@@ -517,7 +238,6 @@
       padding: 16px;
       box-shadow: 0 10px 22px rgba(13, 41, 67, 0.06);
     }
-
     .date-item time {
       display: inline-flex;
       align-items: center;
@@ -528,143 +248,193 @@
       color: #7a4c00;
       font-weight: 900;
       text-align: center;
+      padding: 0 8px;
     }
+    .date-item time.alert, .alert { color: #e53e3e; }
+    .date-item b { color: var(--deep-blue); display: block; }
+    .date-item span { color: var(--muted); font-size: 14px; }
+    .date-item b .alert { color: #e53e3e; }
 
-    .date-item b {
-      color: var(--deep-blue);
-      display: block;
-    }
-
-    .date-item span {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
+    /* ========== 論文徵稿 ========== */
     .cfp-list {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
       margin-top: 18px;
     }
-
-   .tag {
-  background: #edf6fb;
-  color: var(--hakka-blue);
-  border: 1px solid #cde7f7;
-  border-radius: 999px;
-  padding: 9px 12px;
-  font-weight: 700;
-  font-size: 14px;
-  text-align: center;  
-}
-
-    .tabs {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 16px;
+    .tag {
+      background: #edf6fb;
+      color: var(--hakka-blue);
+      border: 1px solid #cde7f7;
+      border-radius: 999px;
+      padding: 9px 12px;
+      font-weight: 700;
+      font-size: 14px;
+      text-align: center;
     }
 
-    .tab-button {
+    /* ========== 會議議程 ========== */
+    #program .container { max-width: var(--max); margin: 0 auto; padding: 0; }
+
+    #program .program-notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: linear-gradient(135deg, var(--deep-blue), var(--hakka-blue));
+      color: #fff;
+      border-radius: 16px;
+      border-left: 6px solid var(--warm-gold);
+      padding: 18px 22px;
+      margin-top: 18px;
+      max-width: 860px;
+      box-shadow: 0 12px 28px rgba(13, 41, 67, 0.18);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+    #program .program-notice .notice-icon {
+      flex: 0 0 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--warm-gold);
+      color: #2d2105;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 18px;
+    }
+    #program .program-notice strong { color: #ffe0a1; font-weight: 800; }
+    #program .program-notice .notice-title {
+      display: block;
+      font-size: 18px;
+      font-weight: 900;
+      margin-bottom: 2px;
+      color: #fff;
+    }
+
+    #program .expo-box {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 16px;
+      align-items: center;
+      background: #fff;
       border: 1px solid var(--line);
-      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    #program .expo-box .expo-time {
+      font-weight: 900;
+      color: var(--hakka-blue);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    #program .expo-box .expo-time small {
+      display: block;
+      font-weight: 600;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    #program .expo-box .expo-tag {
+      display: inline-block;
+      margin-bottom: 6px;
+      background: var(--soft-gold);
+      color: #7a4c00;
+      font-weight: 800;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 999px;
+    }
+    #program .expo-box b { display: block; color: var(--deep-blue); font-size: 16px; margin-bottom: 2px; }
+    #program .expo-box span.loc { color: var(--muted); font-size: 14px; }
+
+    #program .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+    #program .tab-button {
+      border: 1px solid var(--line);
+      background: #fff;
       color: var(--deep-blue);
       border-radius: 999px;
-      padding: 10px 14px;
+      padding: 10px 18px;
       font-weight: 800;
       cursor: pointer;
+      font-size: 14px;
+      font-family: inherit;
     }
-
-    .tab-button.active {
+    #program .tab-button.active {
       background: var(--hakka-blue);
-      color: var(--white);
+      color: #fff;
       border-color: var(--hakka-blue);
     }
 
-    .program-panel {
+    #program .program-panel {
       display: none;
-      background: var(--white);
+      background: #fff;
       border-radius: var(--radius-lg);
       border: 1px solid var(--line);
       overflow: hidden;
       box-shadow: var(--shadow);
     }
+    #program .program-panel.active { display: block; }
 
-    .program-panel.active {
-      display: block;
-    }
-
-    .program-row {
-      display: grid;
-      grid-template-columns: 145px 1fr 1fr;
-      gap: 0;
+    #program .panel-head {
+      padding: 18px 22px;
+      background: var(--mist);
       border-bottom: 1px solid var(--line);
     }
+    #program .panel-head h3 { margin: 0 0 4px; font-size: 20px; color: var(--deep-blue); }
+    #program .panel-head p { margin: 0; font-size: 14px; color: var(--muted); }
 
-    .program-row:last-child {
-      border-bottom: 0;
-    }
-
-    .program-time {
-      padding: 16px;
-      background: transparent;
-      color: var(--hakka-blue);
-      font-weight: 900;
-      border-right: 1px solid var(--line);
-      text-align: center;
-    }
-
-    .program-content {
-      padding: 16px 18px;
-      border-right: 1px solid var(--line);
-    }
-
-    .program-content:last-child {
-      border-right: 0;
-    }
-
-    .program-content b {
-      display: block;
-      color: var(--deep-blue);
-      margin-bottom: 4px;
-    }
-
-    .program-content span {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .speaker-card {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-    }
-
-    .speaker-avatar {
-      flex: 0 0 62px;
-      height: 62px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, var(--hakka-blue), var(--green));
-      color: var(--white);
+    #program .program-row {
       display: grid;
-      place-items: center;
-      font-weight: 900;
-      font-size: 20px;
+      grid-template-columns: 150px minmax(0, 1fr) minmax(0, 1fr);
+      gap: 16px;
+      padding: 16px 22px;
+      border-bottom: 1px solid var(--line);
     }
+    #program .program-row:last-child { border-bottom: 0; }
+    #program .program-time { font-weight: 900; color: var(--hakka-blue); font-size: 15px; }
+    #program .program-content b { display: block; color: var(--deep-blue); font-size: 15px; margin-bottom: 2px; }
+    #program .program-content span { color: var(--muted); font-size: 13px; }
+    #program .program-row.break { background: #fafbfd; }
 
-    .speaker-card small {
-      color: var(--tech-blue);
-      font-weight: 800;
-      display: block;
-      margin-bottom: 5px;
+    /* ========== 專題講者 ========== */
+    #speakers .speakers-pending {
+      position: relative;
+      text-align: center;
+      padding: 60px 20px 50px;
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid #e7ebf3;
     }
+    #speakers .pending-illustration { width: min(220px, 60%); margin: 0 auto 10px; }
+    #speakers .pending-illustration svg { width: 100%; height: auto; display: block; overflow: visible; }
+    #speakers .speakers-pending h3 { font-size: clamp(22px, 5vw, 28px); font-weight: 800; color: #1a2233; margin: 12px 0 14px; }
+    #speakers .speakers-pending p { font-size: 15px; line-height: 1.9; color: #7b8296; margin: 0; }
 
+    @media (prefers-reduced-motion: no-preference) {
+      .pi-circle { animation: pi-breathe 3.2s ease-in-out infinite; transform-origin: 150px 80px; }
+      .pi-person { animation: pi-float 3.2s ease-in-out infinite; }
+      .pi-bubble { animation: pi-bob 2.6s ease-in-out infinite; transform-origin: 218px 36px; }
+      .pi-dot1 { animation: pi-blink 1.2s ease-in-out infinite; }
+      .pi-dot2 { animation: pi-blink 1.2s ease-in-out infinite 0.2s; }
+      .pi-dot3 { animation: pi-blink 1.2s ease-in-out infinite 0.4s; }
+      .pi-sparkle-dot { animation: pi-twinkle 2.4s ease-in-out infinite; }
+      .pi-sparkle-plus { animation: pi-twinkle 2.4s ease-in-out infinite 1.1s; }
+      .pi-arc { stroke-dasharray: 260; stroke-dashoffset: 260; animation: pi-draw 2.4s ease-out forwards; }
+    }
+    @keyframes pi-breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.04); } }
+    @keyframes pi-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+    @keyframes pi-bob { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-3px) rotate(-2deg); } }
+    @keyframes pi-blink { 0%,100% { opacity: 0.35; } 50% { opacity: 1; } }
+    @keyframes pi-twinkle { 0%,100% { opacity: 0.25; transform: scale(0.85); } 50% { opacity: 1; transform: scale(1.15); } }
+    @keyframes pi-draw { to { stroke-dashoffset: 0; } }
+
+    /* ========== 技術暨成果展示 ========== */
     .exhibit-map {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
     }
-
     .zone {
       min-height: 160px;
       border-radius: 20px;
@@ -675,198 +445,67 @@
       border: 1px solid var(--line);
       box-shadow: 0 12px 24px rgba(13, 41, 67, 0.06);
     }
+    .zone img { width: 40px; height: 40px; object-fit: contain; margin-bottom: 6px; }
+    .zone h3 { margin: 0 0 8px; color: var(--deep-blue); font-size: 18px; }
+    .zone p { margin: 0; color: var(--muted); font-size: 14px; }
 
-    .zone strong {
-      display: inline-flex;
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
+    /* ========== 報名 ========== */
+    .hht-reg-card {
+      max-width: 1080px;
+      margin: 0 auto;
+      background: #0f2f52;
+      border-radius: 18px;
+      padding: 24px 22px 22px;
+      color: #fff;
+      box-shadow: 0 18px 40px rgba(13, 41, 67, 0.18);
+    }
+    .hht-reg-kicker {
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      color: rgba(255,255,255,0.75);
+      text-transform: uppercase;
+    }
+    .hht-reg-card h2 { margin: 14px 0; font-size: 26px; font-weight: 800; color: #fff; text-align: left; }
+    .hht-reg-desc { margin: 0 0 18px; font-size: 16px; line-height: 1.8; color: rgba(255,255,255,0.92); }
+    .hht-reg-info {
+      background: #2b4f77;
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+    }
+    .hht-reg-info .date { font-size: 20px; font-weight: 500; margin: 0 0 12px; color: #fff; }
+    .hht-reg-info p { margin: 0 0 6px; font-size: 16px; color: rgba(255,255,255,0.95); }
+    .hht-reg-info p:last-child { margin-bottom: 0; }
+    .hht-reg-btn {
+      display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--deep-blue);
-      color: var(--white);
-      margin-bottom: 10px;
-    }
-
-    .zone h3 {
-      margin: 0 0 8px;
-      color: var(--deep-blue);
-    }
-
-    .zone p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .demo-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-
-    .demo-item {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 16px;
-    }
-
-    .demo-item span {
-      flex: 0 0 42px;
-      height: 42px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: #e9f5fb;
-      color: var(--tech-blue);
-      font-weight: 900;
-    }
-
-    .demo-item b {
-      color: var(--deep-blue);
-      display: block;
-    }
-
-    .demo-item p {
-      margin: 4px 0 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .registration {
-      background:
-        radial-gradient(circle at 8% 20%, rgba(245,176,65,0.26), transparent 26%),
-        linear-gradient(135deg, var(--deep-blue), var(--hakka-blue));
-      color: var(--white);
-    }
-
-    .registration h2,
-    .registration .section-kicker {
-      color: var(--white);
-    }
-
-    .registration .section-desc {
-      color: rgba(255,255,255,0.78);
-    }
-
-    .form-card {
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.22);
-      border-radius: var(--radius-lg);
-      padding: 24px;
-      backdrop-filter: blur(14px);
-      box-shadow: 0 24px 60px rgba(0,0,0,0.18);
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-
-    label {
-      display: grid;
-      gap: 6px;
-      font-weight: 800;
-      color: rgba(255,255,255,0.92);
-      font-size: 14px;
-    }
-
-    input,
-    select,
-    textarea {
+      gap: 8px;
       width: 100%;
-      border: 1px solid rgba(255,255,255,0.22);
-      border-radius: 14px;
-      padding: 12px 13px;
-      font: inherit;
-      background: rgba(255,255,255,0.94);
-      color: var(--ink);
-    }
-
-    textarea {
-      min-height: 116px;
-      resize: vertical;
-    }
-
-    .full {
-      grid-column: 1 / -1;
-    }
-
-    .notice {
-      background: var(--soft-gold);
-      border: 1px solid #ffe1a1;
-      color: #704600;
-      border-radius: 18px;
-      padding: 16px 18px;
-      margin-top: 16px;
-    }
-
-    .venue-card {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .map-placeholder {
-      min-height: 330px;
-      border-radius: var(--radius-lg);
-      background:
-        linear-gradient(135deg, rgba(27,108,168,0.92), rgba(18,60,105,0.92)),
-        repeating-linear-gradient(45deg, rgba(255,255,255,0.16) 0 2px, transparent 2px 12px);
-      color: var(--white);
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 30px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .map-placeholder::before,
-    .map-placeholder::after {
-      content: "";
-      position: absolute;
+      padding: 14px 20px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.10);
+      background: #ececec;
+      color: #1f2937;
+      font-size: 16px;
+      font-weight: 500;
+      transition: 0.18s ease;
     }
+    .hht-reg-btn:hover, .hht-reg-btn:focus { background: #fff; transform: translateY(-2px); outline: none; }
 
-    .map-placeholder::before {
-      width: 260px;
-      height: 260px;
-      left: -80px;
-      top: -90px;
-    }
-
-    .map-placeholder::after {
-      width: 180px;
-      height: 180px;
-      right: -50px;
-      bottom: -40px;
-    }
-
-    .map-placeholder div {
-      position: relative;
-      z-index: 1;
-    }
-
-    .map-placeholder strong {
+    /* ========== 交通與會場 ========== */
+    .venue-wrap { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
+    .venue-map iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      border: 0;
+      border-radius: 16px;
       display: block;
-      font-size: 28px;
-      margin-bottom: 8px;
     }
+    .venue-card-info a { color: #1d4ed8; text-decoration: underline; font-weight: 600; }
 
-    .download-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
+    /* ========== 下載專區 ========== */
+    .download-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
     .download-item {
       background: var(--white);
       border: 1px solid var(--line);
@@ -878,69 +517,27 @@
       gap: 12px;
       transition: 0.18s ease;
     }
+    .download-item:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(13, 41, 67, 0.08); }
+    .download-item b { color: var(--deep-blue); }
+    .download-item span { color: var(--tech-blue); font-weight: 900; }
 
-    .download-item:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 24px rgba(13, 41, 67, 0.08);
-    }
+    /* ========== FAQ ========== */
+    .faq { display: grid; gap: 12px; }
+    details { background: var(--white); border: 1px solid var(--line); border-radius: 18px; padding: 16px 18px; }
+    summary { cursor: pointer; color: var(--deep-blue); font-weight: 900; }
+    details p { margin: 10px 0 0; color: var(--muted); }
 
-    .download-item b {
-      color: var(--deep-blue);
-    }
-
-    .download-item span {
-      color: var(--tech-blue);
-      font-weight: 900;
-    }
-
-    .faq {
+    /* ========== Footer ========== */
+    footer { background: #07192b; color: rgba(255,255,255,0.78); padding: 34px 22px; }
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
       display: grid;
-      gap: 12px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
     }
-
-    details {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 16px 18px;
-    }
-
-    summary {
-      cursor: pointer;
-      color: var(--deep-blue);
-      font-weight: 900;
-    }
-
-    details p {
-      margin: 10px 0 0;
-      color: var(--muted);
-    }
-
-    footer {
-      background: #07192b;
-      color: rgba(255,255,255,0.78);
-      padding: 34px 22px;
-    }
-
-.footer-inner {
-  max-width: 1920px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 22px;
-}
-
-    footer strong {
-      color: var(--white);
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    footer a {
-      color: #ffe0a1;
-      font-weight: 700;
-    }
-    
+    footer strong { color: var(--white); display: block; margin-bottom: 6px; }
+    footer a { color: #ffe0a1; font-weight: 700; }
 
     .back-top {
       position: fixed;
@@ -958,262 +555,155 @@
       display: none;
       z-index: 80;
     }
+    .back-top.show { display: block; }
 
-    .back-top.show {
-      display: block;
-    }
-
-    @media (max-width: 960px) {
-      .menu-toggle {
-        display: inline-flex;
-      }
+    /* ================================================
+       響應式：平板（<= 1080px）導覽列改為選單
+       ================================================ */
+    @media (max-width: 1080px) {
+      .menu-toggle { display: inline-flex; }
 
       nav {
         position: absolute;
-        inset: 73px 14px auto 14px;
+        top: 100%;
+        left: 12px;
+        right: 12px;
+        margin-top: 8px;
         background: var(--white);
         border: 1px solid var(--line);
         border-radius: 18px;
         box-shadow: var(--shadow);
-        padding: 12px;
+        padding: 10px;
         display: none;
-        justify-content: flex-start;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2px;
       }
-
-      nav.open {
-        display: flex;
-      }
-
-      .hero-inner {
-        grid-template-columns: 1fr;
-        padding-top: 62px;
-      }
-
-      .grid-3,
-      .stats,
-      .download-list {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .exhibit-map {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .venue-card {
-        grid-template-columns: 1fr;
-      }
-
-      .program-row {
-        grid-template-columns: 120px 1fr;
-      }
-
-      .program-content:nth-child(3) {
-        grid-column: 2 / -1;
-        border-top: 1px solid var(--line);
-      }
+      nav.open { display: flex; }
+      nav a { padding: 12px 14px; font-size: 15px; border-radius: 12px; }
     }
 
+    /* 平板（<= 960px） */
+    @media (max-width: 960px) {
+      .download-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .exhibit-map { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .venue-wrap { grid-template-columns: 1fr; }
+      .venue-map iframe { min-height: 320px; }
+      #program .program-row { grid-template-columns: 120px minmax(0, 1fr) minmax(0, 1fr); }
+    }
+
+    /* 手機（<= 780px） */
+    @media (max-width: 780px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+    }
+
+    /* 手機（<= 680px） */
     @media (max-width: 680px) {
-      .topbar {
-        padding: 12px 16px;
-      }
+      .topbar { padding: 10px 16px; gap: 10px; }
+      .brand-title strong { font-size: 13px; }
+      .brand-title span { display: none; }
 
-      .brand {
-        min-width: auto;
-      }
+      section { padding: 36px 16px; scroll-margin-top: 64px; }
 
-      .brand-title strong {
-        font-size: 13px;
-      }
+      .section-head { display: block; margin-bottom: 20px; }
+      .section-desc { font-size: 15px; }
 
-      .brand-title span {
-        display: none;
-      }
+      .card { padding: 18px; }
+      .card h3 { font-size: 19px; }
 
-      section {
-        padding: 58px 16px;
-      }
+      .org-row { flex-direction: column; align-items: flex-start; gap: 6px; }
 
-      .hero-inner {
-        padding: 48px 16px 54px;
-      }
+      .date-item { grid-template-columns: 1fr; gap: 10px; }
+      .date-item time { justify-self: start; padding: 0 16px; min-height: 44px; }
 
-      .countdown,
-      .grid-2,
-      .grid-3,
-      .stats,
-      .cfp-list,
-      .demo-list,
-      .download-list,
-      .exhibit-map,
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
+      .cfp-list { grid-template-columns: 1fr; }
 
-      .section-head {
-        display: block;
-      }
+      .exhibit-map, .download-list { grid-template-columns: 1fr; }
+      .zone { min-height: auto; }
 
-      .date-item {
-        grid-template-columns: 1fr;
-      }
+      #program .program-notice { padding: 16px; font-size: 15px; gap: 10px; }
+      #program .program-notice .notice-icon { flex-basis: 30px; height: 30px; font-size: 15px; }
+      #program .expo-box { grid-template-columns: 1fr; gap: 6px; padding: 16px 18px; margin: 20px 0; }
+      #program .tabs { gap: 6px; }
+      #program .tab-button { padding: 9px 14px; font-size: 13px; }
+      #program .panel-head { padding: 14px 16px; }
+      #program .panel-head h3 { font-size: 17px; }
+      #program .program-row { grid-template-columns: 1fr; gap: 4px; padding: 14px 16px; }
+      #program .program-time { margin-bottom: 2px; }
 
-      .program-row {
-        grid-template-columns: 1fr;
-      }
+      #speakers .speakers-pending { padding: 40px 16px 36px; }
 
-      .program-time {
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
+      .hht-reg-card { padding: 20px 16px; }
+      .hht-reg-card h2 { font-size: 22px; }
+      .hht-reg-desc { font-size: 15px; }
+      .hht-reg-info { padding: 16px; }
+      .hht-reg-info .date { font-size: 17px; }
+      .hht-reg-info p { font-size: 15px; }
 
-      .program-content {
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
+      .venue-map iframe { min-height: 280px; }
 
-      .program-content:last-child {
-        border-bottom: 0;
-      }
-
-      .footer-inner {
-        grid-template-columns: 1fr;
-      }
+      footer { padding: 28px 16px; }
     }
   </style>
-  <!-- 1. Banner 圖片（全幅 16:9） -->
-  <section id="home" style="margin:0; padding:0; position:relative; width:100%; padding-top:59.25%; overflow:hidden; line-height:0;">
-    <img src="banner.png" alt="Banner" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; display:block;">
+</head>
+<body>
+
+  <!-- Banner -->
+  <section id="home">
+    <img src="banner.png" alt="第一屆客家人文科技研討會暨成果展 Banner">
   </section>
 
-<style>
-  .brand-mark,
-  .brand-mark::before,
-  .brand-mark::after {
-    background: none !important;
-    background-image: none !important;
-    box-shadow: none !important;
-    content: "" !important;
-    border: none !important;
-  }
-</style>
-
-<!-- 2. 導覽列（移到 Banner 下方） -->
-<header>
-  <div class="topbar">
-    <a class="brand" href="#home" aria-label="返回首頁">
-      <div class="brand-mark" aria-hidden="true"></div>
-      <div class="brand-title">
-        <strong>第一屆客家人文科技研討會暨成果展</strong>
-        <span>The 1st Conference on Hakka Humanities and Technology (HHT 2026)</span>
-      </div>
-    </a>
-    <button class="menu-toggle" type="button" aria-label="開啟選單" aria-expanded="false">選單</button>
-    <nav aria-label="主要選單">
-      <a href="#about">關於活動</a>
-      <a href="#dates">重要日期</a>
-      <a href="#cfp">論文徵稿</a>
-      <a href="#program">會議議程</a>
-      <a href="#speakers">專題講者</a>
-      <a href="#exhibition">技術暨成果展示</a>
-      <a href="#registration">報名</a>
-      <a href="#downloads">下載專區</a>
-    </nav>
-  </div>
-</header>
+  <!-- 導覽列 -->
+  <header>
+    <div class="topbar">
+      <a class="brand" href="#home" aria-label="返回首頁">
+        <div class="brand-title">
+          <strong>第一屆客家人文科技研討會暨成果展</strong>
+          <span>The 1st Conference on Hakka Humanities and Technology (HHT 2026)</span>
+        </div>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="開啟選單" aria-expanded="false">選單</button>
+      <nav aria-label="主要選單">
+        <a href="#about">關於活動</a>
+        <a href="#dates">重要日期</a>
+        <a href="#cfp">論文徵稿</a>
+        <a href="#program">會議議程</a>
+        <a href="#speakers">專題講者</a>
+        <a href="#exhibition">技術暨成果展示</a>
+        <a href="#registration">報名</a>
+        <a href="#downloads">下載專區</a>
+      </nav>
+    </div>
+  </header>
 
   <main>
 
-<!-- 3. 倒數計時器 + 活動資訊 -->
-<section id="countdown-section">
-  <div class="container">
-    <div class="countdown-wrap">
-      <h2 class="countdown-title">距離活動開始</h2>
-      <div class="countdown" id="countdown">
-        <div class="count-item">
-          <strong id="days">--</strong>
-          <span>天</span>
-        </div>
-        <div class="count-item">
-          <strong id="hours">--</strong>
-          <span>時</span>
-        </div>
-        <div class="count-item">
-          <strong id="minutes">--</strong>
-          <span>分</span>
-        </div>
-        <div class="count-item">
-          <strong id="seconds">--</strong>
-          <span>秒</span>
+    <!-- 倒數計時 -->
+    <section id="countdown-section">
+      <div class="container">
+        <div class="countdown-wrap">
+          <h2 class="countdown-title">距離活動開始</h2>
+          <div class="countdown" id="countdown">
+            <div class="count-item"><strong id="days">--</strong><span>天</span></div>
+            <div class="count-item"><strong id="hours">--</strong><span>時</span></div>
+            <div class="count-item"><strong id="minutes">--</strong><span>分</span></div>
+            <div class="count-item"><strong id="seconds">--</strong><span>秒</span></div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-  <style>
-  #home { margin: 0; padding: 0; }
-  #countdown-section {
-    background: #f0f4f8;
-    padding: 2rem 0;
-  }
-  .countdown-wrap {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .countdown-title {
-    font-size: 1.2rem;
-    color: #1a3a5c;
-    margin-bottom: 1rem;
-  }
-  .countdown {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  .count-item {
-    background: #1a63b275;
-    color: #fff;
-    border-radius: 8px;
-    padding: 0.8rem 1.5rem;
-    min-width: 80px;
-  }
-  .count-item strong {
-    display: block;
-    font-size: 2rem;
-    line-height: 1;
-  }
-  .count-item span {
-    font-size: 0.85rem;
-    opacity: 0.8;
-  }
-  .quick-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: left;
-    background: #fff;
-    border-radius: 10px;
-    padding: 1rem 1.5rem;
-    font-size: 0.95rem;
-    color: #333;
-  }
-  .quick-info b { color: #1a3a5c; }
-  </style>
-
-<section id="about">
+    <!-- 關於活動 -->
+    <section id="about">
       <div class="container">
         <div class="section-head">
           <div>
             <div class="section-kicker">About</div>
             <h2>關於活動</h2>
-            <p class="section-desc">隨著人工智慧與語言科技快速發展，低資源語言的保存、傳承與創新應用逐漸受到國際重視。客語作為臺灣重要的文化資產，如何結合人工智慧技術促進語言學習、文化傳播與數位典藏，已成為客家研究與資訊科技跨域合作的重要方向。為促進學術交流與跨領域合作，第一屆客家人文科技研討會 The 1st Conference on Hakka Humanities and Technology (HHT 2026)以「人工智慧轉譯客家文化，語言科技開展客語學習、文化傳播與低資源語言創新應用」為核心理念，建構跨校、跨院之客語人工智慧研究與應用交流平台，串聯人文、資訊、教育與語言科技等研究能量，共同探索客家文化的數位創新與永續發展。
+            <p class="section-desc">隨著人工智慧與語言科技快速發展，低資源語言的保存、傳承與創新應用逐漸受到國際重視。客語作為臺灣重要的文化資產，如何結合人工智慧技術促進語言學習、文化傳播與數位典藏，已成為客家研究與資訊科技跨域合作的重要方向。為促進學術交流與跨領域合作，第一屆客家人文科技研討會 The 1st Conference on Hakka Humanities and Technology (HHT 2026)以「人工智慧轉譯客家文化，語言科技開展客語學習、文化傳播與低資源語言創新應用」為核心理念，建構跨校、跨院之客語人工智慧研究與應用交流平台，串聯人文、資訊、教育與語言科技等研究能量，共同探索客家文化的數位創新與永續發展。</p>
+            <p class="section-desc">本研討會誠摯邀請學者、研究人員、學生及產業界人士踴躍投稿，徵稿主題包含客語人工智慧、低資源語言技術、客語語料庫建置、大型語言模型（LLM）、ASR語音辨識、TTS語音合成、華客／客華翻譯、RAG與GraphRAG、生成式AI創作、客家文化典藏、資訊視覺化、AI倫理與資料授權等相關研究與應用成果，期待透過多元觀點與跨域交流，共同推動客家人文科技的發展。</p>
 
-本研討會誠摯邀請學者、研究人員、學生及產業界人士踴躍投稿，徵稿主題包含客語人工智慧、低資源語言技術、客語語料庫建置、大型語言模型（LLM）、ASR語音辨識、TTS語音合成、華客／客華翻譯、RAG與GraphRAG、生成式AI創作、客家文化典藏、資訊視覺化、AI倫理與資料授權等相關研究與應用成果，期待透過多元觀點與跨域交流，共同推動客家人文科技的發展。</p>
-
-            <!-- 新增：主辦/補助/指導單位 -->
             <div class="org-list">
               <div class="org-row">
                 <span class="org-pill">主辦單位</span>
@@ -1228,37 +718,36 @@
                 <span class="org-text">財團法人聯合工商教育基金會、客家委員會、國立聯合大學</span>
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </section>
 
+    <!-- 重要日期 -->
     <section id="dates">
       <div class="container">
         <div class="section-head">
           <div>
             <div class="section-kicker">Important Dates</div>
             <h2>重要日期</h2>
-            <p class="section-desc"></p>
           </div>
         </div>
 
         <div class="dates">
           <div class="date-item">
-            <time datetime="2026-06">2026.06.01</time>
+            <time datetime="2026-06-01">2026.06.01</time>
             <div><b>官網上線與徵稿公告</b><span>發布活動主題、徵稿範圍與報名方式。</span></div>
           </div>
-         <div class="date-item">
-  <time datetime="2026-09-14" style="color: #e53e3e;">2026.09.14</time>
-  <div><b>論文摘要徵稿截止｜<span style="color: #e53e3e;">延長徵稿</span></b><span>徵稿期限延長至 2026 年 9 月 14 日（一）23:59 止。</span></div>
-</div>
           <div class="date-item">
-            <time datetime="2026-09-27"style="color: #e53e3e;">2026.09.29</time>
-            <div><b>論文審查結果通知｜<span style="color: #e53e3e;">延長通知 </b><span>公告口頭發表、海報發表與系統展示錄取結果延長至2026年9月29日通知。</span></div>
+            <time datetime="2026-09-14" class="alert">2026.09.14</time>
+            <div><b>論文摘要徵稿截止｜<span class="alert">延長徵稿</span></b><span>徵稿期限延長至 2026 年 9 月 14 日（一）23:59 止。</span></div>
           </div>
           <div class="date-item">
-            <time datetime="2026-10-27"style="color: #e53e3e;">2026.10.27</time>
+            <time datetime="2026-09-29" class="alert">2026.09.29</time>
+            <div><b>論文審查結果通知｜<span class="alert">延長通知</span></b><span>公告口頭發表、海報發表與系統展示錄取結果延長至 2026 年 9 月 29 日通知。</span></div>
+          </div>
+          <div class="date-item">
+            <time datetime="2026-10-27" class="alert">2026.10.27</time>
             <div><b>完整論文／海報摘要繳交</b><span>繳交定稿、授權同意與發表者資料。</span></div>
           </div>
           <div class="date-item">
@@ -1273,6 +762,7 @@
       </div>
     </section>
 
+    <!-- 論文徵稿 -->
     <section id="cfp">
       <div class="container">
         <div class="section-head">
@@ -1280,10 +770,9 @@
             <div class="section-kicker">Call for Papers</div>
             <h2>論文徵稿</h2>
             <p class="section-desc">
-  歡迎<strong>客家研究</strong>及<strong>客語 AI</strong>相關之學術論文、實作研究、系統設計、案例研究、學生專題與技術展示投稿。徵稿範圍涵蓋客家語言、文學、歷史、文化、族群與社會等多元議題，以及客語 AI與文化轉譯之創新應用；投稿內容不限於 AI 相關主題。
-</p>
+              歡迎<strong>客家研究</strong>及<strong>客語 AI</strong>相關之學術論文、實作研究、系統設計、案例研究、學生專題與技術展示投稿。徵稿範圍涵蓋客家語言、文學、歷史、文化、族群與社會等多元議題，以及客語 AI與文化轉譯之創新應用；投稿內容不限於 AI 相關主題。
+            </p>
           </div>
-          
         </div>
 
         <div class="grid-2">
@@ -1304,7 +793,7 @@
               <span class="tag">資訊視覺化</span>
               <span class="tag">AI 倫理與資料授權</span>
             </div>
-       </article>
+          </article>
           <article class="card">
             <h3>投稿類型與審查重點</h3>
             <p><b>投稿類型：</b>一般論文。</p>
@@ -1315,552 +804,207 @@
             <p style="margin-top:12px;"><b>發表形式：</b>口頭發表、海報發表。</p>
           </article>
         </div>
-
-        
       </div>
     </section>
 
-<section id="program">
-  <style>
-    #program .container{max-width:1180px;margin:0 auto;padding:0;}
-
-    /* 議程公告提示框 */
-    #program .program-notice{
-      display:flex;align-items:flex-start;gap:14px;
-      background:linear-gradient(135deg,var(--deep-blue),var(--hakka-blue));
-      color:#fff;border-radius:16px;
-      border-left:6px solid var(--warm-gold);
-      padding:18px 22px;margin-top:18px;max-width:860px;
-      box-shadow:0 12px 28px rgba(13,41,67,0.18);
-      font-size:16px;line-height:1.85;
-    }
-    #program .program-notice .notice-icon{
-      flex:0 0 36px;height:36px;border-radius:50%;
-      background:var(--warm-gold);color:#2d2105;
-      display:grid;place-items:center;font-weight:900;font-size:18px;
-    }
-    #program .program-notice strong{color:#ffe0a1;font-weight:800;}
-    #program .program-notice .notice-title{
-      display:block;font-size:18px;font-weight:900;margin-bottom:2px;color:#fff;
-    }
-
-    /* 兩日展出：有框、與議程表同風格 */
-    #program .expo-box{
-      display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:center;
-      background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);
-      box-shadow:var(--shadow);
-      padding:20px 24px;
-      margin:28px 0 28px;
-    }
-    #program .expo-box .expo-time{
-      font-weight:900;color:var(--hakka-blue);font-size:15px;line-height:1.6;
-    }
-    #program .expo-box .expo-time small{
-      display:block;font-weight:600;color:var(--muted);font-size:13px;
-    }
-    #program .expo-box .expo-tag{
-      display:inline-block;margin-bottom:6px;
-      background:var(--soft-gold);color:#7a4c00;font-weight:800;font-size:13px;
-      padding:3px 12px;border-radius:999px;
-    }
-    #program .expo-box b{
-      display:block;color:var(--deep-blue);font-size:16px;margin-bottom:2px;
-    }
-    #program .expo-box span.loc{color:var(--muted);font-size:14px;}
-
-    /* 分頁按鈕 */
-    #program .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
-    #program .tab-button{
-      border:1px solid var(--line);background:#fff;color:var(--deep-blue);
-      border-radius:999px;padding:10px 18px;font-weight:800;cursor:pointer;font-size:14px;
-    }
-    #program .tab-button.active{background:var(--hakka-blue);color:#fff;border-color:var(--hakka-blue);}
-
-    /* 議程面板 */
-    #program .program-panel{
-      display:none;background:#fff;border-radius:var(--radius-lg);
-      border:1px solid var(--line);overflow:hidden;box-shadow:var(--shadow);
-    }
-    #program .program-panel.active{display:block;}
-
-    #program .panel-head{
-      padding:18px 22px;background:var(--mist);border-bottom:1px solid var(--line);
-    }
-    #program .panel-head h3{margin:0 0 4px;font-size:20px;color:var(--deep-blue);}
-    #program .panel-head p{margin:0;font-size:14px;color:var(--muted);}
-
-    #program .program-row{
-      display:grid;grid-template-columns:150px 1fr 1fr;gap:16px;
-      padding:16px 22px;border-bottom:1px solid var(--line);
-    }
-    #program .program-row:last-child{border-bottom:0;}
-    #program .program-time{font-weight:900;color:var(--hakka-blue);font-size:15px;}
-    #program .program-content b{display:block;color:var(--deep-blue);font-size:15px;margin-bottom:2px;}
-    #program .program-content span{color:var(--muted);font-size:13px;}
-    #program .program-row.break{background:#fafbfd;}
-
-    @media (max-width:680px){
-      #program .program-row{grid-template-columns:1fr;gap:4px;}
-      #program .program-time{margin-bottom:2px;}
-      #program .program-notice{padding:16px;font-size:15px;}
-      #program .expo-box{grid-template-columns:1fr;gap:6px;padding:16px 18px;}
-    }
-  </style>
-
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="section-kicker">PROGRAM</div>
-        <h2>會議議程</h2>
-
-        <div class="program-notice" role="note">
-          <span class="notice-icon" aria-hidden="true">!</span>
+    <!-- 會議議程 -->
+    <section id="program">
+      <div class="container">
+        <div class="section-head">
           <div>
-            <span class="notice-title">議程公告</span>
-            本研討會議程持續規劃中，論文發表場次將於 <strong>2026 年 10 月 27 日</strong>定稿繳交截止後，依實際發表情況進行安排。
-            正式議程預計於 <strong>11 月上旬公告</strong>，敬請留意網站最新資訊。
+            <div class="section-kicker">PROGRAM</div>
+            <h2>會議議程</h2>
+
+            <div class="program-notice" role="note">
+              <span class="notice-icon" aria-hidden="true">!</span>
+              <div>
+                <span class="notice-title">議程公告</span>
+                本研討會議程持續規劃中，論文發表場次將於 <strong>2026 年 10 月 27 日</strong>定稿繳交截止後，依實際發表情況進行安排。
+                正式議程預計於 <strong>11 月上旬公告</strong>，敬請留意網站最新資訊。
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="expo-box">
+          <div class="expo-time">11/24～11/25<small>09:00–17:00</small></div>
+          <div>
+            <span class="expo-tag">兩日展出</span>
+            <b>客家 AI 生態系成果展</b>
+            <span class="loc">地點：藝術中心蓮荷藝文空間</span>
+          </div>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="議程日期選擇">
+          <button class="tab-button active" type="button" data-tab="day1" role="tab" aria-selected="true">11/24 研討會暨成果展</button>
+          <button class="tab-button" type="button" data-tab="day2" role="tab" aria-selected="false">11/25 院慶慶祝大會</button>
+        </div>
+
+        <!-- DAY 1 -->
+        <div class="program-panel active" id="day1" role="tabpanel">
+          <div class="panel-head">
+            <h3>2026 第一屆客家人文科技研討會暨成果展</h3>
+            <p>11/24（二）｜地點：藝術中心蓮荷藝文空間</p>
+          </div>
+
+          <div class="program-row">
+            <div class="program-time">08:30–09:00</div>
+            <div class="program-content"><b>報到</b></div>
+            <div class="program-content"><b>Registration</b></div>
+          </div>
+          <div class="program-row">
+            <div class="program-time">09:00–09:30</div>
+            <div class="program-content"><b>開幕式</b></div>
+            <div class="program-content"><b>Opening Ceremony</b></div>
+          </div>
+          <div class="program-row">
+            <div class="program-time">09:30–11:40</div>
+            <div class="program-content"><b>論文發表、專題演講</b></div>
+            <div class="program-content"><b>Paper Presentations &amp; Keynote Speeches</b></div>
+          </div>
+          <div class="program-row break">
+            <div class="program-time">11:40–12:30</div>
+            <div class="program-content"><b>午餐與交流</b></div>
+            <div class="program-content"><b>Lunch &amp; Networking</b></div>
+          </div>
+          <div class="program-row">
+            <div class="program-time">12:30–17:40</div>
+            <div class="program-content"><b>論文發表、專題演講</b></div>
+            <div class="program-content"><b>Paper Presentations &amp; Keynote Speeches</b></div>
+          </div>
+        </div>
+
+        <!-- DAY 2 -->
+        <div class="program-panel" id="day2" role="tabpanel">
+          <div class="panel-head">
+            <h3>客家研究學院 20 週年院慶慶祝大會</h3>
+            <p>11/25（三）｜地點：藝術中心展演廳</p>
+          </div>
+
+          <div class="program-row">
+            <div class="program-time">09:30–10:00</div>
+            <div class="program-content"><b>報到</b></div>
+            <div class="program-content"><b>Registration</b></div>
+          </div>
+          <div class="program-row">
+            <div class="program-time">10:00–10:10</div>
+            <div class="program-content"><b>開幕式</b></div>
+            <div class="program-content"><b>Opening Ceremony</b></div>
+          </div>
+          <div class="program-row">
+            <div class="program-time">10:10–10:30</div>
+            <div class="program-content"><b>貴賓致詞</b></div>
+            <div class="program-content"><b>Remarks by Distinguished Guests</b></div>
+          </div>
+          <div class="program-row">
+            <div class="program-time">10:30–11:00</div>
+            <div class="program-content"><b>二十週年專書發表</b></div>
+            <div class="program-content"><b>20th Anniversary Book Launch</b></div>
+          </div>
+          <div class="program-row">
+            <div class="program-time">11:00–12:00</div>
+            <div class="program-content"><b>感恩之旅－感謝歷年客院獎學金捐贈者</b></div>
+            <div class="program-content"><b>Journey of Gratitude: Honoring Past Scholarship Donors</b></div>
+          </div>
+          <div class="program-row break">
+            <div class="program-time">12:00–13:00</div>
+            <div class="program-content"><b>午宴</b></div>
+            <div class="program-content"><b>Celebration Luncheon</b></div>
+          </div>
+          <div class="program-row">
+            <div class="program-time">13:00–14:30</div>
+            <div class="program-content"><b>頒發 115 年度客家研究學院系列獎學金</b></div>
+            <div class="program-content"><b>2026 Hakka College Scholarship Awards Ceremony</b></div>
+          </div>
+          <div class="program-row">
+            <div class="program-time">14:30–16:00</div>
+            <div class="program-content"><b>客家研究前瞻論壇</b></div>
+            <div class="program-content"><b>Hakka Studies Prospects Forum</b></div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="expo-box">
-      <div class="expo-time">11/24～11/25<small>09:00–17:00</small></div>
-      <div>
-        <span class="expo-tag">兩日展出</span>
-        <b>客家 AI 生態系成果展</b>
-        <span class="loc">地點：藝術中心蓮荷藝文空間</span>
+    <!-- 專題講者 -->
+    <section id="speakers">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Speakers</div>
+            <h2>專題講者</h2>
+          </div>
+        </div>
+
+        <div class="speakers-pending">
+          <div class="pending-illustration">
+            <svg viewBox="0 0 300 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="講者資訊籌備中">
+              <path class="pi-arc" d="M 30 130 Q 150 60 270 130" fill="none" stroke="#dbe7fb" stroke-width="2"/>
+              <circle class="pi-sparkle-dot" cx="60" cy="70" r="4" fill="#cfe0fb"/>
+              <circle class="pi-sparkle-dot" cx="60" cy="82" r="2.5" fill="#cfe0fb"/>
+              <g class="pi-sparkle-plus" stroke="#cfe0fb" stroke-width="2" stroke-linecap="round">
+                <line x1="228" y1="90" x2="238" y2="90"/>
+                <line x1="233" y1="85" x2="233" y2="95"/>
+              </g>
+              <g class="pi-person">
+                <circle class="pi-circle" cx="150" cy="80" r="46" fill="#e9f1ff"/>
+                <g stroke="#3b6ef0" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="150" cy="64" r="15"/>
+                  <path d="M 122 108 Q 122 82 150 82 Q 178 82 178 108"/>
+                </g>
+              </g>
+              <g class="pi-bubble">
+                <path d="M 190 30 Q 190 16 204 16 L 232 16 Q 246 16 246 30 L 246 42 Q 246 56 232 56 L 214 56 L 202 66 L 204 56 L 204 56 Q 190 56 190 42 Z"
+                      fill="#ffffff" stroke="#3b6ef0" stroke-width="3"/>
+                <circle class="pi-dot1" cx="209" cy="36" r="2.6" fill="#3b6ef0"/>
+                <circle class="pi-dot2" cx="218" cy="36" r="2.6" fill="#3b6ef0"/>
+                <circle class="pi-dot3" cx="227" cy="36" r="2.6" fill="#3b6ef0"/>
+              </g>
+            </svg>
+          </div>
+          <h3>講者資訊籌備中</h3>
+          <p>講者資訊籌備中，<br>完整資訊將於定期公告！</p>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="tabs" role="tablist" aria-label="議程日期選擇">
-      <button class="tab-button active" type="button" data-tab="day1" role="tab" aria-selected="true">11/24 研討會暨成果展</button>
-      <button class="tab-button" type="button" data-tab="day2" role="tab" aria-selected="false">11/25 院慶慶祝大會</button>
-    </div>
-
-    <!-- ===== DAY 1 ===== -->
-    <div class="program-panel active" id="day1" role="tabpanel">
-      <div class="panel-head">
-        <h3>2026 第一屆客家人文科技研討會暨成果展</h3>
-        <p>11/24（二）｜地點：藝術中心蓮荷藝文空間</p>
-      </div>
-
-      <div class="program-row">
-        <div class="program-time">08:30–09:00</div>
-        <div class="program-content"><b>報到</b></div>
-        <div class="program-content"><b>Registration</b></div>
-      </div>
-
-      <div class="program-row">
-        <div class="program-time">09:00–09:30</div>
-        <div class="program-content"><b>開幕式</b></div>
-        <div class="program-content"><b>Opening Ceremony</b></div>
-      </div>
-
-      <div class="program-row">
-        <div class="program-time">09:30–11:40</div>
-        <div class="program-content"><b>論文發表、專題演講</b></div>
-        <div class="program-content"><b>Paper Presentations &amp; Keynote Speeches</b></div>
-      </div>
-
-      <div class="program-row break">
-        <div class="program-time">11:40–12:30</div>
-        <div class="program-content"><b>午餐與交流</b></div>
-        <div class="program-content"><b>Lunch &amp; Networking</b></div>
-      </div>
-
-      <div class="program-row">
-        <div class="program-time">12:30–17:40</div>
-        <div class="program-content"><b>論文發表、專題演講</b></div>
-        <div class="program-content"><b>Paper Presentations &amp; Keynote Speeches</b></div>
-      </div>
-    </div>
-
-    <!-- ===== DAY 2 ===== -->
-    <div class="program-panel" id="day2" role="tabpanel">
-      <div class="panel-head">
-        <h3>客家研究學院 20 週年院慶慶祝大會</h3>
-        <p>11/25（三）｜地點：藝術中心展演廳</p>
-      </div>
-
-      <div class="program-row">
-        <div class="program-time">09:30–10:00</div>
-        <div class="program-content"><b>報到</b></div>
-        <div class="program-content"><b>Registration</b></div>
-      </div>
-
-      <div class="program-row">
-        <div class="program-time">10:00–10:10</div>
-        <div class="program-content"><b>開幕式</b></div>
-        <div class="program-content"><b>Opening Ceremony</b></div>
-      </div>
-
-      <div class="program-row">
-        <div class="program-time">10:10–10:30</div>
-        <div class="program-content"><b>貴賓致詞</b></div>
-        <div class="program-content"><b>Remarks by Distinguished Guests</b></div>
-      </div>
-
-      <div class="program-row">
-        <div class="program-time">10:30–11:00</div>
-        <div class="program-content"><b>二十週年專書發表</b></div>
-        <div class="program-content"><b>20th Anniversary Book Launch</b></div>
-      </div>
-
-      <div class="program-row">
-        <div class="program-time">11:00–12:00</div>
-        <div class="program-content"><b>感恩之旅－感謝歷年客院獎學金捐贈者</b></div>
-        <div class="program-content"><b>Journey of Gratitude: Honoring Past Scholarship Donors</b></div>
-      </div>
-
-      <div class="program-row break">
-        <div class="program-time">12:00–13:00</div>
-        <div class="program-content"><b>午宴</b></div>
-        <div class="program-content"><b>Celebration Luncheon</b></div>
-      </div>
-
-      <div class="program-row">
-        <div class="program-time">13:00–14:30</div>
-        <div class="program-content"><b>頒發 115 年度客家研究學院系列獎學金</b></div>
-        <div class="program-content"><b>2026 Hakka College Scholarship Awards Ceremony</b></div>
-      </div>
-
-      <div class="program-row">
-        <div class="program-time">14:30–16:00</div>
-        <div class="program-content"><b>客家研究前瞻論壇</b></div>
-        <div class="program-content"><b>Hakka Studies Prospects Forum</b></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-<meta charset="UTF-8">
-<title>Speakers Pending Preview</title>
-<style>
-
-  .container { max-width: 1000px; margin: 0 auto; }
-  .section-kicker { font-size:12px; letter-spacing:2px; color:#9aa3b5; font-weight:700; }
-  .section-desc { color:#7b8296; }
-
-  .speakers-pending {
-    position: relative;
-    text-align: center;
-    padding: 60px 20px 50px;
-    background: #fff;
-    border-radius: 16px;
-    border: 1px solid #e7ebf3;
-  }
-  .speakers-pending .pending-illustration { width: 220px; margin: 0 auto 10px; }
-  .speakers-pending .pending-illustration svg { width: 100%; height: auto; display: block; overflow: visible; }
-  .speakers-pending h3 { font-size: 28px; font-weight: 800; color: #1a2233; margin: 12px 0 14px; }
-  .speakers-pending p { font-size: 15px; line-height: 1.9; color: #7b8296; margin: 0; }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .pi-circle { animation: pi-breathe 3.2s ease-in-out infinite; transform-origin: 150px 80px; }
-    .pi-person { animation: pi-float 3.2s ease-in-out infinite; }
-    .pi-bubble { animation: pi-bob 2.6s ease-in-out infinite; transform-origin: 218px 36px; }
-    .pi-dot1 { animation: pi-blink 1.2s ease-in-out infinite; }
-    .pi-dot2 { animation: pi-blink 1.2s ease-in-out infinite 0.2s; }
-    .pi-dot3 { animation: pi-blink 1.2s ease-in-out infinite 0.4s; }
-    .pi-sparkle-dot { animation: pi-twinkle 2.4s ease-in-out infinite; }
-    .pi-sparkle-plus { animation: pi-twinkle 2.4s ease-in-out infinite 1.1s; }
-    .pi-arc { stroke-dasharray: 260; stroke-dashoffset: 260; animation: pi-draw 2.4s ease-out forwards; }
-  }
-
-  @keyframes pi-breathe {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.04); }
-  }
-  @keyframes pi-float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-4px); }
-  }
-  @keyframes pi-bob {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-3px) rotate(-2deg); }
-  }
-  @keyframes pi-blink {
-    0%, 100% { opacity: 0.35; }
-    50% { opacity: 1; }
-  }
-  @keyframes pi-twinkle {
-    0%, 100% { opacity: 0.25; transform: scale(0.85); }
-    50% { opacity: 1; transform: scale(1.15); }
-  }
-  @keyframes pi-draw {
-    to { stroke-dashoffset: 0; }
-  }
-  <style>
-  /* ... 原本所有的样式都保留不动 ... */
-
-  .countdown-title{
-  font-size: 22px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.countdown{
-  display: flex;
-  flex-wrap: nowrap;        /* 永遠不換行，桌機手機都一樣 */
-  gap: 16px;
-  justify-content: center;
-}
-
-.count-item{
-  flex: 1 1 0;              /* 讓四個平均分配剩餘空間 */
-  max-width: 130px;
-  padding: 24px 20px;
-  border-radius: 12px;
-  text-align: center;
-  box-sizing: border-box;
-  min-width: 0;             /* 允許縮小，避免內容撐開容器 */
-}
-
-.count-item strong{
-  font-size: 60px;
-  line-height: 1;
-  display: block;
-}
-
-.count-item span{
-  font-size: 20px;
-  margin-top: 8px;
-  display: block;
-}
-
-/* 手機板：縮小尺寸，但仍然維持一排四個 */
-@media (max-width: 480px){
-  .countdown{
-    gap: 6px;
-  }
-  .count-item{
-    padding: 10px 4px;
-  }
-  .count-item strong{
-    font-size: 26px;
-  }
-  .count-item span{
-    font-size: 11px;
-    margin-top: 2px;
-  }
-}
-
-/* 極窄螢幕（iPhone SE 等）再縮小一點 */
-@media (max-width: 360px){
-  .countdown{
-    gap: 4px;
-  }
-  .count-item{
-    padding: 8px 2px;
-  }
-  .count-item strong{
-    font-size: 22px;
-  }
-  .count-item span{
-    font-size: 10px;
-  }
-}
-
-  .count-item span{
-    font-size: 20px;
-    margin-top: 8px;
-    display: block;
-  }
-
-  @media (max-width: 480px){
-    .countdown{ gap: 8px; }
-    .count-item{ flex: 1 1 70px; max-width: 90px; padding: 14px 8px; }
-    .count-item strong{ font-size: 32px; }
-    .count-item span{ font-size: 13px; margin-top: 4px; }
-  }
-
-  @media (max-width: 360px){
-    .count-item strong{ font-size: 26px; }
-    .count-item span{ font-size: 11px; }
-  }
-</style>
-<head>
-  <style>
-    .section-kicker { ... }
-    .section-desc { ... }
-    .section-head { ... }
-
-    /* 👇 加在这里 */
-    .org-list{
-      margin-top: 80px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .org-row{
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .org-pill{
-      flex-shrink: 0;
-      background: #5b8def;
-      color: #fff;
-      font-weight: 700;
-      padding: 8px 20px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      white-space: nowrap;
-    }
-
-    .org-text{
-      font-weight: 700;
-      font-size: 1rem;
-      color: #1a2540;
-    }
-
-    @media (max-width: 600px){
-      .org-row{
-        flex-wrap: wrap;
-      }
-    }
-    .org-list{
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .org-row{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .org-pill{
-    flex-shrink: 0;
-    background: #5b8def;
-    color: #fff;
-    font-weight: 700;
-    padding: 8px 20px;
-    border-radius: 999px;
-    font-size: 0.9rem;
-    white-space: nowrap;
-  }
-
-  .org-text{
-    font-weight: 700;
-    font-size: 1rem;
-    color: #1a2540;
-  }
-
-  @media (max-width: 600px){
-    .org-row{
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 8px;
-    }
-  }
-
-
-  </style>
-</head>
-
-
-
-
-
-
-</style>
-</head>
-<body>
-<section id="speakers">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="section-kicker">Speakers</div>
-        <h2 style="color:rgb(0, 0, 0);">專題講者</h2>
-       
-      </div>
-    </div>
-
-    <div class="speakers-pending">
-      <div class="pending-illustration">
-        <svg viewBox="0 0 300 190" xmlns="http://www.w3.org/2000/svg">
-          <path class="pi-arc" d="M 30 130 Q 150 60 270 130" fill="none" stroke="#dbe7fb" stroke-width="2"/>
-
-          <circle class="pi-sparkle-dot" cx="60" cy="70" r="4" fill="#cfe0fb"/>
-          <circle class="pi-sparkle-dot" cx="60" cy="82" r="2.5" fill="#cfe0fb"/>
-          <g class="pi-sparkle-plus" stroke="#cfe0fb" stroke-width="2" stroke-linecap="round">
-            <line x1="228" y1="90" x2="238" y2="90"/>
-            <line x1="233" y1="85" x2="233" y2="95"/>
-          </g>
-
-          <g class="pi-person">
-            <circle class="pi-circle" cx="150" cy="80" r="46" fill="#e9f1ff"/>
-            <g stroke="#3b6ef0" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="150" cy="64" r="15"/>
-              <path d="M 122 108 Q 122 82 150 82 Q 178 82 178 108"/>
-            </g>
-          </g>
-
-          <g class="pi-bubble">
-            <path d="M 190 30 Q 190 16 204 16 L 232 16 Q 246 16 246 30 L 246 42 Q 246 56 232 56 L 214 56 L 202 66 L 204 56 L 204 56 Q 190 56 190 42 Z"
-                  fill="#ffffff" stroke="#3b6ef0" stroke-width="3"/>
-            <circle class="pi-dot1" cx="209" cy="36" r="2.6" fill="#3b6ef0"/>
-            <circle class="pi-dot2" cx="218" cy="36" r="2.6" fill="#3b6ef0"/>
-            <circle class="pi-dot3" cx="227" cy="36" r="2.6" fill="#3b6ef0"/>
-          </g>
-        </svg>
-      </div>
-      <h3>講者資訊籌備中</h3>
-      <p>
-        講者資訊籌備中，<br>
-        完整資訊將於定期公告！
-      </p>
-    </div>
-  </div>
-</section>
-</body>
-</html>
-
-
+    <!-- 技術暨成果展示 -->
+    <section id="exhibition">
       <div class="container">
         <div class="section-head">
           <div>
             <div class="section-kicker">Technology and Achievement Exhibition</div>
-           <h2>技術暨成果展示</h2>
+            <h2>技術暨成果展示</h2>
           </div>
         </div>
 
         <div class="exhibit-map">
           <article class="zone">
-            <img src="gohakka_KIWI.png" alt="Go Hakka 標誌" style="width:40px; height:40px; object-fit:contain;">
+            <img src="gohakka_KIWI.png" alt="Go Hakka 標誌">
             <h3>智慧客家實驗室成果展</h3>
             <p>展出內容規劃中，將陸續公開更新</p>
           </article>
           <article class="zone">
-            <img src="gohakka_KIWI.png" alt="Go Hakka 標誌" style="width:40px; height:40px; object-fit:contain;">
+            <img src="gohakka_KIWI.png" alt="Go Hakka 標誌">
             <h3>語音科技展示區</h3>
             <p>客語 ASR、TTS、多腔調語音處理、即時字幕與語音互動。</p>
           </article>
           <article class="zone">
-            <img src="gohakka_KIWI.png" alt="Go Hakka 標誌" style="width:40px; height:40px; object-fit:contain;">
+            <img src="gohakka_KIWI.png" alt="Go Hakka 標誌">
             <h3>文化轉譯與生成式 AI</h3>
             <p>客語文章生成、客語影音與字幕、文化知識問答、Podcast 內容生成。</p>
           </article>
           <article class="zone">
-            <img src="gohakka_KIWI.png" alt="Go Hakka 標誌" style="width:40px; height:40px; object-fit:contain;">
+            <img src="gohakka_KIWI.png" alt="Go Hakka 標誌">
             <h3>學生專題與課程成果</h3>
             <p>跨院課程成果、AI 應用設計、客庄資料分析與資訊視覺化作品。</p>
           </article>
           <article class="zone">
-            <img src="gohakka_KIWI.png" alt="Go Hakka 標誌" style="width:40px; height:40px; object-fit:contain;">
+            <img src="gohakka_KIWI.png" alt="Go Hakka 標誌">
             <h3>產業與技術產品展示</h3>
             <p>客語 AI 實體機器人、智慧導覽系統、語言學習平台與互動裝置。</p>
           </article>
           <article class="zone">
-            <img src="gohakka_KIWI.png" alt="Go Hakka 標誌" style="width:40px; height:40px; object-fit:contain;">
+            <img src="gohakka_KIWI.png" alt="Go Hakka 標誌">
             <h3>互動體驗與回饋區</h3>
             <p>現場試用、問卷回饋、合作洽談與後續應用需求蒐集。</p>
           </article>
@@ -1868,163 +1012,85 @@
       </div>
     </section>
 
-<section class="registration" id="registration" style="background:transparent; color:inherit;">
-  <style>
-    .hht-reg-card{
-      max-width: 1080px;
-      margin: 0 auto;
-      background: #0f2f52;
-      border-radius: 18px;
-      padding: 24px 22px 22px;
-      color: #fff;
-      box-shadow: 0 18px 40px rgba(13, 41, 67, 0.18);
-    }
-    .hht-reg-kicker{
-      font-size: 14px;
-      font-weight: 400;
-      letter-spacing: 0.02em;
-      color: rgba(255,255,255,0.75);
-      text-transform: uppercase;
-    }
-    .hht-reg-card h2{
-      margin: 14px 0 14px;
-      font-size: 26px;
-      font-weight: 800;
-      color: #fff;
-      text-align: left;
-    }
-    .hht-reg-desc{
-      margin: 0 0 18px;
-      font-size: 16px;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.92);
-      text-align: left;
-    }
-    .hht-reg-info{
-      background: #2b4f77;
-      border-radius: 12px;
-      padding: 18px 20px;
-      margin-bottom: 16px;
-      text-align: left;
-    }
-    .hht-reg-info .date{
-      font-size: 20px;
-      font-weight: 500;
-      margin: 0 0 12px;
-      color: #fff;
-    }
-    .hht-reg-info p{
-      margin: 0 0 6px;
-      font-size: 16px;
-      color: rgba(255,255,255,0.95);
-    }
-    .hht-reg-info p:last-child{ margin-bottom: 0; }
-    .hht-reg-btn{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: 100%;
-      padding: 14px 20px;
-      border-radius: 999px;
-      background: #ececec;
-      color: #1f2937;
-      font-size: 16px;
-      font-weight: 500;
-      text-decoration: none;
-      transition: 0.18s ease;
-    }
-    .hht-reg-btn:hover,
-    .hht-reg-btn:focus{
-      background: #fff;
-      transform: translateY(-2px);
-      outline: none;
-    }
-    @media (max-width: 680px){
-      .hht-reg-card{ padding: 20px 16px; }
-      .hht-reg-card h2{ font-size: 22px; }
-      .hht-reg-info .date{ font-size: 17px; }
-      .hht-reg-info p, .hht-reg-desc{ font-size: 15px; }
-    }
-  </style>
+    <!-- 報名 -->
+    <section id="registration">
+      <div class="hht-reg-card">
+        <div class="hht-reg-kicker">ATTENDEE REGISTRATION</div>
+        <h2>研討會與會報名</h2>
+        <p class="hht-reg-desc">
+          歡迎對客家人文、語言科技及人工智慧應用有興趣之各界人士報名參加「第一屆客家人文科技研討會暨成果展」。
+        </p>
 
-  <div class="hht-reg-card">
-    <div class="hht-reg-kicker">ATTENDEE REGISTRATION</div>
-    <h2>研討會與會報名</h2>
-    <p class="hht-reg-desc">
-      歡迎對客家人文、語言科技及人工智慧應用有興趣之各界人士報名參加「第一屆客家人文科技研討會暨成果展」。
-    </p>
+        <div class="hht-reg-info">
+          <p class="date">活動日期：2026 年 11 月 24 日（二）至 11 月 25 日（三）</p>
+          <p>活動地點：國立聯合大學第二校區（八甲校區）Q 棟</p>
+          <p>本活動提供出席證明，請依規定完成現場簽到及簽退。</p>
+        </div>
 
-    <div class="hht-reg-info">
-      <p class="date">活動日期：2026 年 11 月 24 日（二）至 11 月 25 日（三）</p>
-      <p>活動地點：國立聯合大學第二校區（八甲校區）Q 棟</p>
-      <p>本活動提供出席證明，請依規定完成現場簽到及簽退。</p>
-    </div>
+        <a href="https://forms.gle/hmerDa2D42M9r5f47"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="hht-reg-btn">
+          立即報名參加 <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
 
-    <a href="https://forms.gle/hmerDa2D42M9r5f47"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="hht-reg-btn">
-      立即報名參加 <span aria-hidden="true">↗</span>
-    </a>
-  </div>
-</section>
-
+    <!-- 交通與會場 -->
     <section id="venue">
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="section-kicker">Venue & Travel</div>
+            <div class="section-kicker">Venue &amp; Travel</div>
             <h2>交通與會場</h2>
-            <p class="section-desc"></p>
           </div>
         </div>
-<div style="display:flex; flex-wrap:wrap; gap:24px; align-items:stretch;">
-  <div class="venue-card" style="flex:1 1 420px; min-width:0;">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3629.4067461553245!2d120.78902677481648!3d24.540602457983034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3469a96897b0bda1%3A0x5fd63eec7c376c77!2z5a6i5a6256CU56m25a246Zmi!5e0!3m2!1szh-TW!2stw!4v1781670744107!5m2!1szh-TW!2stw"
-      width="160%"
-      height="100%"
-      style="border:0; border-radius:16px; display:block; min-height:360px;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-  <article class="card" style="flex:1 1 420px; min-width:0;">
-    <h3>會場資訊</h3>
-    <p><b>地點：</b>國立聯合大學八甲校區客家研究學院</p>
-    <p style="margin-top:12px;"><b>交通與到達方式：</b><br>
-    1. 臺鐵－苗栗站：<br>
-    　(1) 計程車：約12分鐘抵達八甲校區<br>
-    　(2) 公車轉乘：搭乘<a href="https://www.taiwanbus.tw/eBUSPage/Query/QueryResult.aspx?rno=58150&rn=1603348570651&lan=C" target="_blank" style="color:#1d4ed8; text-decoration:underline; font-weight:600;">苗栗客運 5815</a>，直達八甲校區<br>
-    2. 高鐵：<br>
-    　(1) 計程車：約25分鐘抵達八甲校區<br>
-    　(2) 公車轉乘：搭乘<a href="https://www.taiwanbus.tw/eBUSPage/Query/QueryResult.aspx?rno=58150&rn=1603348570651&lan=C" target="_blank" style="color:#1d4ed8; text-decoration:underline; font-weight:600;">苗栗客運 5815</a>，直達八甲校區
-    </p>
-  </article>
-</div>
+
+        <div class="venue-wrap">
+          <div class="venue-map">
+            <iframe
+              title="會場地圖"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3629.4067461553245!2d120.78902677481648!3d24.540602457983034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3469a96897b0bda1%3A0x5fd63eec7c376c77!2z5a6i5a6256CU56m25a246Zmi!5e0!3m2!1szh-TW!2stw!4v1781670744107!5m2!1szh-TW!2stw"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <article class="card venue-card-info">
+            <h3>會場資訊</h3>
+            <p><b>地點：</b>國立聯合大學八甲校區客家研究學院</p>
+            <p style="margin-top:12px;"><b>交通與到達方式：</b><br>
+              1. 臺鐵－苗栗站：<br>
+              　(1) 計程車：約12分鐘抵達八甲校區<br>
+              　(2) 公車轉乘：搭乘<a href="https://www.taiwanbus.tw/eBUSPage/Query/QueryResult.aspx?rno=58150&amp;rn=1603348570651&amp;lan=C" target="_blank" rel="noopener noreferrer">苗栗客運 5815</a>，直達八甲校區<br>
+              2. 高鐵：<br>
+              　(1) 計程車：約25分鐘抵達八甲校區<br>
+              　(2) 公車轉乘：搭乘<a href="https://www.taiwanbus.tw/eBUSPage/Query/QueryResult.aspx?rno=58150&amp;rn=1603348570651&amp;lan=C" target="_blank" rel="noopener noreferrer">苗栗客運 5815</a>，直達八甲校區
+            </p>
+          </article>
+        </div>
       </div>
     </section>
 
+    <!-- 下載專區 -->
     <section id="downloads">
       <div class="container">
         <div class="section-head">
           <div>
             <div class="section-kicker">Downloads</div>
             <h2>下載專區</h2>
-            <p class="section-desc" style="color:red;"></p>
           </div>
         </div>
 
         <div class="download-list">
-  <a class="download-item" href="HHT 2026 PDF.pdf" download aria-label="論文格式範本"><b>論文格式範本</b><span>PDF</span></a>
-  <a class="download-item" href="HHT 2026 WORD.docx" download aria-label="論文格式範本"><b>論文格式範本</b><span>WORD</span></a>
-  <a class="download-item" href="尚未確定.pdf" download aria-label="活動議程"><b>活動議程</b><span>PDF</span></a>
-</div>
+          <a class="download-item" href="HHT 2026 PDF.pdf" download aria-label="論文格式範本 PDF"><b>論文格式範本</b><span>PDF</span></a>
+          <a class="download-item" href="HHT 2026 WORD.docx" download aria-label="論文格式範本 WORD"><b>論文格式範本</b><span>WORD</span></a>
+          <a class="download-item" href="尚未確定.pdf" download aria-label="活動議程 PDF"><b>活動議程</b><span>PDF</span></a>
+        </div>
       </div>
     </section>
 
+    <!-- 常見問題 -->
     <section id="faq">
       <div class="container">
         <div class="section-head">
@@ -2052,8 +1118,8 @@
     </section>
   </main>
 
-<footer id="contact">
-    <div class="footer-inner ">
+  <footer id="contact">
+    <div class="footer-inner">
       <div>
         <strong>第一屆客家人文科技研討會暨成果展</strong>
         <div>The 1st Conference on Hakka Humanities and Technology (HHT 2026)</div>
@@ -2074,6 +1140,7 @@
   <script>
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
+
     menuToggle.addEventListener('click', () => {
       const isOpen = nav.classList.toggle('open');
       menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
@@ -2109,8 +1176,7 @@
     const secondsEl = document.getElementById('seconds');
 
     function updateCountdown() {
-      const now = new Date();
-      const diff = eventDate - now;
+      const diff = eventDate - new Date();
 
       if (diff <= 0) {
         daysEl.textContent = '0';
@@ -2120,15 +1186,10 @@
         return;
       }
 
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      daysEl.textContent = days;
-      hoursEl.textContent = hours;
-      minutesEl.textContent = minutes;
-      secondsEl.textContent = seconds;
+      daysEl.textContent = Math.floor(diff / (1000 * 60 * 60 * 24));
+      hoursEl.textContent = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      minutesEl.textContent = Math.floor((diff / (1000 * 60)) % 60);
+      secondsEl.textContent = Math.floor((diff / 1000) % 60);
     }
 
     updateCountdown();
