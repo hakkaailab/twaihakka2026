@@ -1323,8 +1323,28 @@
 <section id="program">
   <style>
     #program .container{max-width:1180px;margin:0 auto;padding:0;}
-    #program .program-desc{color:var(--muted);font-size:16px;margin:10px 0 0;max-width:760px;}
 
+    /* 議程公告提示框 */
+    #program .program-notice{
+      display:flex;align-items:flex-start;gap:14px;
+      background:linear-gradient(135deg,var(--deep-blue),var(--hakka-blue));
+      color:#fff;border-radius:16px;
+      border-left:6px solid var(--warm-gold);
+      padding:18px 22px;margin-top:18px;max-width:860px;
+      box-shadow:0 12px 28px rgba(13,41,67,0.18);
+      font-size:16px;line-height:1.85;
+    }
+    #program .program-notice .notice-icon{
+      flex:0 0 36px;height:36px;border-radius:50%;
+      background:var(--warm-gold);color:#2d2105;
+      display:grid;place-items:center;font-weight:900;font-size:18px;
+    }
+    #program .program-notice strong{color:#ffe0a1;font-weight:800;}
+    #program .program-notice .notice-title{
+      display:block;font-size:18px;font-weight:900;margin-bottom:2px;color:#fff;
+    }
+
+    /* 兩日展出橫幅 */
     #program .expo-banner{
       display:flex;align-items:center;gap:16px;flex-wrap:wrap;
       background:var(--soft-gold);border:1px solid #ffe1a1;color:#704600;
@@ -1336,6 +1356,7 @@
     }
     #program .expo-banner b{color:var(--deep-blue);}
 
+    /* 分頁按鈕 */
     #program .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
     #program .tab-button{
       border:1px solid var(--line);background:#fff;color:var(--deep-blue);
@@ -1343,6 +1364,7 @@
     }
     #program .tab-button.active{background:var(--hakka-blue);color:#fff;border-color:var(--hakka-blue);}
 
+    /* 議程面板 */
     #program .program-panel{
       display:none;background:#fff;border-radius:var(--radius-lg);
       border:1px solid var(--line);overflow:hidden;box-shadow:var(--shadow);
@@ -1368,6 +1390,7 @@
     @media (max-width:680px){
       #program .program-row{grid-template-columns:1fr;gap:4px;}
       #program .program-time{margin-bottom:2px;}
+      #program .program-notice{padding:16px;font-size:15px;}
     }
   </style>
 
@@ -1376,7 +1399,15 @@
       <div>
         <div class="section-kicker">PROGRAM</div>
         <h2>會議議程</h2>
-        <p class="program-desc">本研討會議程持續規劃中，論文發表場次將於 2026 年 10 月 27 日定稿繳交截止後，依實際發表情況進行安排。正式議程預計於 11 月上旬公告，敬請留意網站最新資訊。</p>
+
+        <div class="program-notice" role="note">
+          <span class="notice-icon" aria-hidden="true">!</span>
+          <div>
+            <span class="notice-title">議程公告</span>
+            本研討會議程持續規劃中，論文發表場次將於 <strong>2026 年 10 月 27 日</strong>定稿繳交截止後，依實際發表情況進行安排。
+            正式議程預計於 <strong>11 月上旬公告</strong>，敬請留意網站最新資訊。
+          </div>
+        </div>
       </div>
     </div>
 
