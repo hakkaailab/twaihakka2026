@@ -1965,48 +1965,105 @@
     </section>
 
  
-<section class="registration" id="registration">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="section-kicker">ATTENDEE REGISTRATION</div>
-        <h2>研討會與會報名</h2>
-        <p class="section-desc">
-          歡迎對客家人文、語言科技及人工智慧應用有興趣之各界人士報名參加。
-        </p>
-      </div>
+<section class="registration" id="registration" style="background:transparent; color:inherit;">
+  <style>
+    .hht-reg-card{
+      max-width: 1080px;
+      margin: 0 auto;
+      background: #0f2f52;
+      border-radius: 18px;
+      padding: 24px 22px 22px;
+      color: #fff;
+      box-shadow: 0 18px 40px rgba(13, 41, 67, 0.18);
+    }
+    .hht-reg-kicker{
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: rgba(255,255,255,0.75);
+      text-transform: uppercase;
+    }
+    .hht-reg-card h2{
+      margin: 14px 0 14px;
+      font-size: 26px;
+      font-weight: 800;
+      color: #fff;
+      text-align: left;
+    }
+    .hht-reg-desc{
+      margin: 0 0 18px;
+      font-size: 16px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.92);
+      text-align: left;
+    }
+    .hht-reg-info{
+      background: #2b4f77;
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+    .hht-reg-info .date{
+      font-size: 20px;
+      font-weight: 500;
+      margin: 0 0 12px;
+      color: #fff;
+    }
+    .hht-reg-info p{
+      margin: 0 0 6px;
+      font-size: 16px;
+      color: rgba(255,255,255,0.95);
+    }
+    .hht-reg-info p:last-child{ margin-bottom: 0; }
+    .hht-reg-btn{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: 999px;
+      background: #ececec;
+      color: #1f2937;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: 0.18s ease;
+    }
+    .hht-reg-btn:hover,
+    .hht-reg-btn:focus{
+      background: #fff;
+      transform: translateY(-2px);
+      outline: none;
+    }
+    @media (max-width: 680px){
+      .hht-reg-card{ padding: 20px 16px; }
+      .hht-reg-card h2{ font-size: 22px; }
+      .hht-reg-info .date{ font-size: 17px; }
+      .hht-reg-info p, .hht-reg-desc{ font-size: 15px; }
+    }
+  </style>
+
+  <div class="hht-reg-card">
+    <div class="hht-reg-kicker">ATTENDEE REGISTRATION</div>
+    <h2>研討會與會報名</h2>
+    <p class="hht-reg-desc">
+      歡迎對客家人文、語言科技及人工智慧應用有興趣之各界人士報名參加「第一屆客家人文科技研討會暨成果展」。
+    </p>
+
+    <div class="hht-reg-info">
+      <p class="date">活動日期：2026 年 11 月 24 日（二）至 11 月 25 日（三）</p>
+      <p>活動地點：國立聯合大學第二校區（八甲校區）Q 棟</p>
+      <p>本活動提供出席證明，請依規定完成現場簽到及簽退。</p>
     </div>
 
-    <div class="form-card" style="text-align: center; padding: 3rem 2rem;">
-
-      <h3 style="margin-bottom: 1.5rem;">
-        第一屆客家人文科技研討會暨成果展
-      </h3>
-
-      <p style="margin-bottom: 0.7rem; font-size: 1.05rem;">
-        <strong>活動日期：</strong>2026 年 11 月 24 日（二）至 11 月 25 日（三）
-      </p>
-
-      <p style="margin-bottom: 1.5rem; font-size: 1.05rem;">
-        <strong>活動地點：</strong>國立聯合大學第二校區（八甲校區）Q 棟
-      </p>
-
-      <p style="margin-bottom: 2rem; font-size: 1rem; opacity: 0.85; line-height: 1.8;">
-        本活動開放各界人士報名參加，請填寫報名表單，
-        以利主辦單位統計出席人數及安排相關事宜。
-        <br>
-        活動將提供出席證明，請於活動當日完成簽到及簽退。
-      </p>
-
-      <a href="確認後放上表單"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="btn-primary"
-         style="font-size: 1.4rem;">
-        立即報名參加 →
-      </a>
-
-    </div>
+    <a href="確認後放上表單"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="hht-reg-btn">
+      立即報名參加 <span aria-hidden="true">↗</span>
+    </a>
   </div>
 </section>
 
