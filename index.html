@@ -397,7 +397,7 @@
     #program .program-content span { color: var(--muted); font-size: 13px; }
     #program .program-row.break { background: #fafbfd; }
 
-    /* ========== 專題講者 ========== */
+    /* ========== 客家研究前瞻論壇 ========== */
     #speakers .speakers-pending {
       position: relative;
       text-align: center;
@@ -645,6 +645,329 @@
 
       footer { padding: 28px 16px; }
     }
+    #program .expo-box h3 { margin: 0 0 8px; color: var(--deep-blue); font-size: 24px; line-height: 1.4; }
+    #program .expo-box h4 { margin: 0 0 6px; color: var(--deep-blue); font-size: 19px; }
+    #program .expo-box p { margin: 8px 0 0; }
+    #program .expo-details, #program .expo-platform { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 20px; margin-top: 8px; }
+    #program .expo-details p, #program .expo-platform p { color: var(--muted); }
+    #program .expo-platform { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    #program .expo-link { display: inline-block; flex-shrink: 0; background: var(--deep-blue); color: white; padding: 10px 22px; border-radius: 999px; font-weight: 700; }
+    #program .expo-link:hover { background: var(--tech-blue); }
+    #program .expo-link:focus-visible { outline: 3px solid var(--warm-gold); outline-offset: 4px; }
+    @media (max-width: 640px) { #program .expo-platform { align-items: stretch; flex-direction: column; gap: 14px; } #program .expo-link { text-align: center; } }
+    /* Exhibition application gallery */
+    #program .expo-box { grid-template-columns: 150px minmax(0, 1fr); gap: 24px; padding: 28px 24px; box-shadow: none; border-color: #dedede; color: #171717; }
+    #program .expo-box .expo-time { color: #171717; font-size: 26px; font-weight: 700; }
+    #program .expo-box .expo-time small { font-size: 16px; font-weight: 400; color: #707070; }
+    #program .expo-label { color: #707070; font-size: 16px; }
+    #program .expo-box h3 { color: #171717; margin: 3px 0 8px; }
+    #program .expo-showcase { grid-column: 1 / -1; border-top: 1px solid #ededed; padding-top: 24px; }
+    #program .expo-showcase h4 { color: #222; font-size: 18px; font-weight: 500; margin: 0 0 22px; }
+    #program .expo-apps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 24px; }
+    #program .expo-app { margin: 0; min-width: 0; text-align: center; }
+    #program .expo-app img { width: 100%; aspect-ratio: 1.68; object-fit: contain; }
+    #program .expo-app figcaption { margin-top: 12px; font-size: 16px; line-height: 1.6; }
+    #program .expo-platform { border-top: 0; padding-top: 8px; margin-top: 0; }
+    #program .expo-platform p { margin: 0; color: #707070; }
+    #program .expo-link { background: #111; }
+    @media (max-width: 640px) {
+      #program .expo-box { grid-template-columns: 1fr; gap: 18px; padding: 22px 18px; }
+      #program .expo-apps { grid-template-columns: 1fr; gap: 28px; }
+      #program .expo-app { max-width: 440px; width: 100%; margin: 0 auto; }
+    }
+    /* Refined exhibition preview: smaller visuals and larger typography */
+    #program .expo-box { background: #fff; border: 1px solid #dedede; border-radius: 28px; padding: 32px; gap: 28px; grid-template-columns: 144px minmax(0, 1fr); box-shadow: none; }
+    #program .expo-box .expo-time { font-size: 30px; font-weight: 650; letter-spacing: -.04em; line-height: 1.5; }
+    #program .expo-box .expo-time small { font-size: 18px; letter-spacing: 0; }
+    #program .expo-label { font-size: 18px; }
+    #program .expo-box h3 { font-size: 28px; font-weight: 700; letter-spacing: .02em; }
+    #program .expo-box span.loc { font-size: 18px; color: #707070; }
+    #program .expo-showcase { padding-top: 26px; }
+    #program .expo-showcase h4 { font-size: 22px; font-weight: 600; margin-bottom: 26px; }
+    #program .expo-apps { gap: 32px 20px; }
+    #program .expo-app img { width: 70%; height: auto; aspect-ratio: 1.68; object-fit: contain; margin: 0 auto; }
+    #program .expo-app figcaption { font-size: 21px; font-weight: 600; line-height: 1.55; margin-top: 16px; color: #222; text-wrap: balance; }
+    #program .expo-platform { padding-top: 8px; gap: 24px; }
+    #program .expo-platform p { font-size: 18px; }
+    #program .expo-link { padding: 11px 24px; font-size: 20px; font-weight: 500; line-height: 1.5; background: #111; }
+    #program .expo-link:hover { background: #333; }
+    @media (max-width: 900px) and (min-width: 641px) { #program .expo-app figcaption { font-size: 19px; } }
+    @media (max-width: 640px) {
+      #program .expo-box { grid-template-columns: 1fr; padding: 24px 20px; gap: 20px; }
+      #program .expo-box h3 { font-size: 25px; }
+      #program .expo-apps { grid-template-columns: 1fr; gap: 28px; }
+      #program .expo-app img { width: 65%; max-width: 260px; }
+      #program .expo-app figcaption { font-size: 21px; margin-top: 12px; }
+      #program .expo-platform { gap: 16px; }
+      #program .expo-link { font-size: 19px; }
+    }
+    #speakers { background: #fff; color: #222; }
+    #speakers .section-kicker { color: #777; }
+    #speakers h2 { color: #171717; }
+    .speaker-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 52px 36px; margin-top: 40px; }
+    .speaker-profile { min-width: 0; display: flex; flex-direction: column; }
+    .speaker-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .speaker-meta { flex: 1; min-width: 0; }
+    .speaker-number { display: flex; align-items: center; gap: 8px; border-bottom: 2px solid #aaa; padding-bottom: 10px; color: #777; }
+    .speaker-number span { font-size: 11px; letter-spacing: .12em; line-height: 1.5; font-weight: 700; }
+    .speaker-number strong { font-size: 40px; line-height: 1; font-weight: 600; }
+    .speaker-profile h3 { font-size: 28px; letter-spacing: .08em; margin: 16px 0 0; font-weight: 500; }
+    .speaker-avatar { width: 126px; height: 126px; flex-shrink: 0; border: 5px solid #f1d739; border-radius: 50%; background: #f7f7f3; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #727269; }
+    .speaker-avatar span { font-size: 19px; }
+    .speaker-avatar small { font-size: 12px; color: #92928a; margin-top: 4px; }
+    .speaker-role { font-size: 16px; line-height: 1.7; margin: 18px 0 28px; min-height: 82px; }
+    .speaker-topic { position: relative; background: #f6f6f6; padding: 22px; border-radius: 4px; flex: 1; }
+    .speaker-topic::before { content: ''; position: absolute; right: 42px; top: -14px; border-left: 14px solid transparent; border-bottom: 14px solid #f6f6f6; }
+    .speaker-topic > span { font-size: 12px; color: #888; letter-spacing: .1em; }
+    .speaker-topic h4 { margin: 8px 0 0; font-size: 19px; line-height: 1.8; font-weight: 600; }
+    @media(max-width: 1000px) { .speaker-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+    @media(max-width: 640px) { .speaker-grid { grid-template-columns: 1fr; gap: 38px; } .speaker-avatar { width: 120px; height: 120px; } .speaker-role { min-height: 0; } }
+    /* Speaker review refinements */
+    .speaker-number span { font-size: 18px; letter-spacing: .08em; }
+    .speaker-role { margin-bottom: 20px; }
+    .speaker-talk-title { margin: 0 0 26px; color: #b28a00; font-size: 25px; line-height: 1.65; font-weight: 700; text-wrap: pretty; }
+    .speaker-topic { flex: 0; min-height: 130px; margin-top: auto; }
+    .speaker-topic > span { font-size: 16px; color: #777; }
+    .speaker-bio { margin: 10px 0 0; font-size: 18px; line-height: 1.8; color: #777; }
+    @media(max-width: 640px) { .speaker-talk-title { font-size: 24px; } }
+    .speaker-bio { color: #555; font-weight: 400; line-height: 1.9; overflow-wrap: anywhere; }
+    .speaker-topic { min-height: 0; }
+    /* Forum layout: aligned rows and readable long introductions */
+    #speakers { padding: 64px 24px 72px; }
+    #speakers .section-head { margin-bottom: 0; }
+    #speakers h2 { font-size: clamp(28px, 3.5vw, 38px); line-height: 1.4; }
+    .speaker-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; row-gap: 52px; margin-top: 36px; }
+    .speaker-profile { display: grid; grid-template-rows: subgrid; grid-row: span 4; gap: 0; align-content: start; }
+    .speaker-top { align-items: center; gap: 24px; min-height: 140px; }
+    .speaker-number { justify-content: flex-start; gap: 14px; padding-bottom: 12px; border-color: #d9d9d9; }
+    .speaker-number span { font-size: 16px; font-weight: 500; }
+    .speaker-number strong { font-size: 38px; font-weight: 500; color: #777; }
+    .speaker-profile h3 { font-size: 30px; line-height: 1.4; letter-spacing: .05em; margin-top: 16px; }
+    .speaker-avatar { width: 128px; height: 128px; border-width: 4px; }
+    .speaker-role { margin: 18px 0 0; padding-bottom: 24px; min-height: 0; font-size: 17px; line-height: 1.8; color: #444; }
+    .speaker-talk-title { font-size: 25px; line-height: 1.65; margin: 0; padding-bottom: 24px; color: #a17c00; font-weight: 700; }
+    .speaker-topic { margin: 0; padding: 24px 26px 28px; border-radius: 10px; background: #f6f6f6; }
+    .speaker-topic::before { border-bottom-color: #f6f6f6; right: 48px; }
+    .speaker-topic > span { display: block; font-size: 14px; color: #888; letter-spacing: .12em; }
+    .speaker-bio { margin: 10px 0 0; font-size: 17px; line-height: 1.95; color: #4c4c4c; font-weight: 400; }
+    @media (min-width: 1200px) { .speaker-grid { column-gap: 56px; } }
+    @media (max-width: 760px) {
+      #speakers { padding: 42px 20px 48px; }
+      .speaker-grid { grid-template-columns: 1fr; row-gap: 40px; margin-top: 28px; }
+      .speaker-profile { grid-row: auto; grid-template-rows: auto; border-bottom: 1px solid #e8e8e8; padding-bottom: 32px; }
+      .speaker-profile:last-child { border-bottom: 0; padding-bottom: 0; }
+      .speaker-top { gap: 18px; min-height: 118px; }
+      .speaker-avatar { width: 112px; height: 112px; }
+      .speaker-profile h3 { font-size: 28px; }
+      .speaker-role { padding-bottom: 20px; font-size: 16px; }
+      .speaker-talk-title { font-size: 23px; padding-bottom: 22px; }
+      .speaker-topic { padding: 22px; }
+      .speaker-bio { font-size: 17px; line-height: 1.9; }
+    }
+    /* Exhibition: blue-to-mint gradient and yellow system labels */
+    #program .expo-box {
+      background: linear-gradient(115deg, #2856cf 0%, #377de0 43%, #5cbaca 74%, #a4ead3 100%);
+      border-color: transparent;
+      color: #fff;
+    }
+    #program .expo-box .expo-time, #program .expo-box .expo-time small,
+    #program .expo-box h3, #program .expo-box span.loc,
+    #program .expo-label, #program .expo-showcase h4,
+    #program .expo-platform p { color: #fff; }
+    #program .expo-showcase { border-top-color: rgba(255,255,255,.35); }
+    #program .expo-app { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    #program .expo-app img { margin: 0 auto; }
+    #program .expo-app figcaption {
+      display: flex; align-items: center; justify-content: center;
+      width: 100%; min-height: 66px; margin: 0; padding: 12px 16px;
+      background: #ffe650; color: #222; border: 1px solid rgba(255,255,255,.65);
+      border-radius: 5px; box-shadow: 0 3px 0 rgba(13,55,116,.13);
+      font-size: 20px; font-weight: 700; line-height: 1.55; letter-spacing: .025em;
+    }
+    #program .expo-apps { align-items: stretch; gap: 30px 24px; }
+    #program .expo-link { background: #fff; color: #204da9; box-shadow: 0 4px 14px rgba(18,60,105,.12); }
+    #program .expo-link:hover { background: #fff2a5; color: #173d89; }
+    @media(max-width: 640px) {
+      #program .expo-box { background: linear-gradient(145deg, #2856cf 0%, #377de0 40%, #66c6cb 75%, #a4ead3 100%); }
+      #program .expo-app figcaption { min-height: 58px; font-size: 20px; }
+    }
+    /* Compact service directory inspired by the supplied reference */
+    #program .expo-box { gap: 24px; padding: 32px; }
+    #program .expo-apps { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+    #program .expo-app {
+      position: relative; display: grid; grid-template-columns: 100px minmax(0,1fr);
+      align-items: center; gap: 18px; width: 100%; max-width: none; margin: 0;
+      min-height: 124px; padding: 20px; background: #fff; border: 1px solid rgba(255,255,255,.8);
+      border-radius: 10px; box-shadow: 0 4px 14px rgba(22,62,134,.08); text-align: left;
+    }
+    #program .expo-app img { width: 100%; max-width: 100px; height: auto; aspect-ratio: 1.68; object-fit: contain; margin: 0; }
+    #program .expo-app figcaption {
+      display: block; min-height: 0; width: auto; margin: 0; padding: 0;
+      background: transparent; color: #193864; border: 0; border-radius: 0; box-shadow: none;
+      font-size: 24px; font-weight: 700; line-height: 1.5; letter-spacing: .01em; text-wrap: balance;
+    }
+    #program .expo-showcase h4 { margin-bottom: 20px; }
+    #program .expo-platform { padding-top: 0; }
+    @media(max-width: 900px) {
+      #program .expo-app { grid-template-columns: 76px minmax(0,1fr); gap: 14px; padding: 18px; }
+      #program .expo-app figcaption { font-size: 21px; }
+    }
+    @media(max-width: 640px) {
+      #program .expo-box { padding: 24px 18px; }
+      #program .expo-apps { grid-template-columns: 1fr; gap: 12px; }
+      #program .expo-app { grid-template-columns: 80px minmax(0,1fr); min-height: 100px; padding: 16px; }
+      #program .expo-app figcaption { font-size: 22px; min-height: 0; }
+    }
+    .speaker-avatar { overflow: hidden; }
+    .speaker-avatar img { display: block; width: 100%; height: 100%; max-width: none; object-fit: cover; border-radius: 50%; }
+    .forum-introduction { margin-top: 24px; max-width: 980px; }
+    .forum-introduction h3 { margin: 0 0 18px; font-size: clamp(23px, 2.6vw, 30px); line-height: 1.6; color: #a17c00; font-weight: 700; }
+    .forum-introduction p { margin: 0; font-size: 19px; line-height: 1.95; color: #555; }
+    .forum-host { display: flex; align-items: center; gap: 28px; margin: 32px 0 44px; padding: 28px 32px; border: 1px solid #e8e5d8; border-radius: 16px; background: #fcfbf7; }
+    .forum-host-label { font-size: 15px; color: #8b6c00; font-weight: 600; letter-spacing: .12em; }
+    .forum-host-info h3 { margin: 6px 0; font-size: 30px; line-height: 1.5; font-weight: 600; color: #222; }
+    .forum-host-info h3 span { display: inline-block; font-size: 18px; font-weight: 400; margin-left: 10px; color: #555; }
+    .forum-host-info p { margin: 0; font-size: 18px; color: #555; line-height: 1.8; }
+    @media(max-width: 640px) { .forum-introduction p { font-size: 17px; } .forum-host { gap: 18px; padding: 22px 18px; margin-bottom: 32px; } .forum-host .speaker-avatar { width: 96px; height: 96px; } .forum-host-info h3 { font-size: 26px; } .forum-host-info h3 span { display: block; margin: 4px 0 0; font-size: 16px; } .forum-host-info p { font-size: 16px; } }
+    /* Site palette: bright blue, aqua and cool white */
+    :root {
+      --hakka-blue: #3267d8; --deep-blue: #263d66; --tech-blue: #3267d8;
+      --warm-gold: #47bdc4; --soft-gold: #e9f6fa; --mist: #f4f6fb;
+      --ink: #25334a; --muted: #64748b; --line: #dfe8f4; --green: #26a99f;
+      --shadow: 0 12px 32px rgba(50,103,216,.09);
+      --brand-gradient: linear-gradient(115deg, #315ad4 0%, #397ce0 46%, #54b8ce 76%, #94e7d1 100%);
+    }
+    body { background: #f4f6fb; }
+    header { background: rgba(247,249,253,.97); border-bottom-color: #e3eaf5; }
+    .brand-title strong { color: #2e61b7; }
+    nav a { color: #34445e; }
+    nav a:hover, nav a:focus { color: #2860cb; background: #e6efff; }
+    .menu-toggle { background: linear-gradient(110deg,#3267d8,#38bbae); }
+    h2, .card h3, .zone h3, summary, .date-item b, .download-item b { color: #2e63c7; }
+    .section-kicker { color: #3889c5; }
+    #countdown-section { background: #eef3fc; }
+    .countdown-title { color: #2e63c7; }
+    .count-item { background: linear-gradient(145deg,#3267d8,#419ed2); box-shadow: 0 8px 20px rgba(50,103,216,.12); }
+    .count-item:nth-child(3) { background: linear-gradient(145deg,#377fd9,#46b5c6); }
+    .count-item:nth-child(4) { background: linear-gradient(145deg,#3d9dcb,#3cb6ad); }
+    .org-pill { background: #3973d8; }
+    .org-text { color: #34445e; }
+    .card, .date-item, .download-item, details { border-color: #e1e9f5; box-shadow: 0 8px 26px rgba(46,99,199,.06); }
+    .date-item time { background: #e8f0ff; color: #3267d8; }
+    #program .program-notice { background: linear-gradient(115deg,#315fd2,#348eae); }
+    #program .notice-icon { background: #e4fffa; color: #287685; }
+    #program .program-notice strong { color: #d9fff4; }
+    #program .expo-box { background: var(--brand-gradient); }
+    #program .expo-tag { background: rgba(255,255,255,.18); color: #fff; }
+    #program .expo-app figcaption { color: #2d5fb6; }
+    #program .expo-link { color: #3267d8; background: #fff; }
+    #program .expo-link:hover { color: #2453b4; background: #e7fff7; }
+    #program .tab-button { color: #3267d8; border-color: #d7e3f7; }
+    #program .tab-button.active { background: linear-gradient(110deg,#3267d8,#32b6ad); border-color: transparent; color: white; }
+    #program .panel-head { background: #eaf1fd; }
+    #program .panel-head h3, #program .program-time { color: #2f65ce; }
+    #program .program-content b { color: #34445e; }
+    #program .program-row.break { background: #eef9f8; }
+    #speakers { background: #f4f6fb; }
+    #speakers h2 { color: #2e63c7; }
+    .forum-introduction h3, .speaker-talk-title { color: #3267d8; }
+    .forum-introduction p, .speaker-role, .speaker-bio { color: #53637a; }
+    .forum-host { background: linear-gradient(110deg,#e8f0ff,#e9faf5); border-color: #d9e9f3; }
+    .forum-host-label { color: #218b99; }
+    .forum-host-info h3, .speaker-profile h3 { color: #263d66; }
+    .speaker-avatar { border-color: #51b9ca; background: #e9f6fa; }
+    .speaker-number { border-color: #cdddf5; color: #3e7bd2; }
+    .speaker-number strong { color: #3972cd; }
+    .speaker-topic { background: #fff; box-shadow: 0 8px 24px rgba(50,103,216,.06); }
+    .speaker-topic::before { border-bottom-color: #fff; }
+    .speaker-topic > span { color: #378dba; }
+    .zone { background: linear-gradient(145deg,#fff,#eef9fc); border-color: #dfeaf5; box-shadow: 0 8px 26px rgba(50,103,216,.06); }
+    .hht-reg-card { background: var(--brand-gradient); }
+    .hht-reg-info { background: rgba(18,65,147,.24); }
+    .hht-reg-btn { background: #fff; color: #2f65ce; }
+    .hht-reg-btn:hover, .hht-reg-btn:focus { background: #e6fff6; }
+    footer { background: #3164d0; color: #e8f1ff; }
+    footer a { color: #c3fff0; }
+    .back-top { background: linear-gradient(135deg,#3267d8,#36b9b1); color: white; box-shadow: 0 6px 18px rgba(50,103,216,.2); }
+    :focus-visible { outline-color: #2675de; }
+    @media(max-width: 640px) { #program .expo-box { background: linear-gradient(145deg,#315ad4,#397ce0 40%,#54b8ce 75%,#94e7d1); } }
+    /* Consistent spacing for important date cards */
+    #dates .dates { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    #dates .date-item { margin: 0; padding: 20px 24px; min-height: 100px; grid-template-columns: 190px minmax(0, 1fr); gap: 24px; align-items: center; }
+    #dates .date-item time { min-height: 56px; padding: 10px 12px; }
+    #dates .date-item b { line-height: 1.6; }
+    #dates .date-item span { display: block; margin-top: 4px; line-height: 1.7; }
+    @media(max-width: 640px) {
+      #dates .dates { gap: 16px; }
+      #dates .date-item { grid-template-columns: 1fr; gap: 14px; padding: 20px; min-height: 0; }
+      #dates .date-item time { min-width: 170px; min-height: 48px; }
+    }
+    /* Requested yellow headings and lighter agenda notice */
+    .speaker-talk-title, .forum-introduction h3 { color: #f5b041; }
+    #program .program-notice { background: linear-gradient(110deg,#e5efff,#e3f7f4); color: #304e75; border-left-color: #57b9c6; box-shadow: 0 8px 24px rgba(50,103,216,.07); }
+    #program .program-notice .notice-title { color: #2e63c7; }
+    #program .program-notice strong { color: #245db6; }
+    #program .program-notice .notice-icon { background: #c6ecec; color: #237b8b; }
+    #program .expo-heading { display: grid; grid-template-columns: minmax(0,1fr) minmax(260px,360px); align-items: center; gap: 20px; }
+    .expo-ecosystem { width: 100%; height: auto; display: block; }
+    .eco-orbit { transform-origin: 210px 125px; animation: ecosystem-orbit 24s linear infinite; }
+    @keyframes ecosystem-orbit { to { transform: rotate(360deg); } }
+    @media(max-width: 1000px) { #program .expo-box { grid-template-columns: 130px minmax(0,1fr); } #program .expo-heading { grid-template-columns: minmax(0,1fr) 260px; gap: 12px; } #program .expo-heading h3 { font-size: 24px; } }
+    @media(max-width: 760px) { #program .expo-box { grid-template-columns: 1fr; } #program .expo-heading { grid-template-columns: 1fr; gap: 20px; } .expo-ecosystem { max-width: 360px; margin: 0 auto; } }
+    @media(prefers-reduced-motion: reduce) { .eco-orbit { animation: none; } }
+    .forum-introduction h3 { color: #2d65d5; }
+    @supports ((background-clip: text) or (-webkit-background-clip: text)) {
+      .forum-introduction h3 {
+        width: fit-content; max-width: 100%;
+        background-image: linear-gradient(100deg, #244cb4 0%, #326fe0 48%, #238eaf 100%);
+        -webkit-background-clip: text; background-clip: text;
+        color: transparent; -webkit-text-fill-color: transparent;
+      }
+    }
+    .speaker-talk-title { color: #3267d8; }
+.event-date { display: block; margin-bottom: 12px; color: #3273cb; font-size: 18px; font-weight: 700; letter-spacing: .08em; }
+#keynotes { background: #eef5fc; padding: 60px 24px; }
+.keynote-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 32px; }
+.keynote-visual { position: relative; aspect-ratio: 1.2; overflow: hidden; border-radius: 16px; background: #dcebf8; }
+.keynote-visual > img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+.keynote-overlay { position: absolute; inset: auto 0 0; padding: 62px 26px 26px; background: linear-gradient(transparent,rgba(29,76,164,.9) 48%,rgba(27,113,155,.97)); color: white; }
+.keynote-overlay > span { font-size: 14px; letter-spacing: .12em; color: #c9fff1; }
+.keynote-overlay h3 { margin: 10px 0 0; font-size: 24px; line-height: 1.65; color: white; }
+.keynote-placeholder { background: linear-gradient(135deg,#dce9ff,#bdeee5); }
+.keynote-placeholder-name { position: absolute; inset: 16% 0 auto; text-align: center; color: #3267ad; font-size: 38px; letter-spacing: .12em; }
+.keynote-placeholder-name small { display: block; margin-top: 8px; font-size: 15px; letter-spacing: .05em; color: #557c96; }
+.keynote-person { padding: 20px 4px 0; }
+.keynote-person h4 { margin: 0 0 6px; font-size: 25px; color: #263d66; }
+.keynote-person h4 span { font-size: 17px; font-weight: 400; margin-left: 10px; }
+.keynote-person p { margin: 0; font-size: 17px; color: #64748b; }
+@media(max-width:640px) { #keynotes { padding: 42px 20px; } .keynote-grid { grid-template-columns: 1fr; gap: 32px; } .keynote-overlay { padding: 55px 22px 22px; } .keynote-overlay h3 { font-size: 22px; } }
+.keynote-visual { aspect-ratio: 1; }
+.keynote-overlay { padding-top: 90px; background: linear-gradient(transparent,rgba(22,66,145,.9) 38%,rgba(22,103,145,.98)); }
+.keynote-overlay .keynote-person { padding: 16px 0 0; border-top: 1px solid rgba(255,255,255,.25); margin-top: 16px; }
+.keynote-overlay .keynote-person h4 { color: white; font-size: 24px; }
+.keynote-overlay .keynote-person h4 span { color: #dcf9ff; }
+.keynote-overlay .keynote-person p { color: #dcf9ff; font-size: 16px; }
+@media(max-width:640px) { .keynote-visual { aspect-ratio: .85; } .keynote-overlay h3 { font-size: 21px; } }
+    .keynote-visual:has(> img[src="keynote-lee.png"]) { background: #201b1b; }
+    .keynote-visual > img[src="keynote-lee.png"] {
+      position: absolute; width: 74%; height: 74%; left: 13%; top: 5%;
+      object-fit: contain; object-position: center top;
+    }
+    .keynote-visual:has(> img[src="keynote-lee.png"]) { background: #171516; }
+    .keynote-visual > img[src="keynote-lee.png"] {
+      -webkit-mask-image: linear-gradient(to right,transparent,#000 12%,#000 88%,transparent);
+      mask-image: linear-gradient(to right,transparent,#000 12%,#000 88%,transparent);
+    }
+    .keynote-overlay { box-sizing: border-box; height: 64%; display: flex; flex-direction: column; justify-content: flex-end; }
+    .keynote-overlay h3 { min-height: 3.3em; }
+    .keynote-overlay .keynote-person { flex-shrink: 0; }
+    .transport-guide { margin-top: 22px; }
+    .transport-guide h4 { margin: 0 0 18px; color: #2e63c7; font-size: 19px; }
+    .transport-guide > div + div { border-top: 1px solid #e1e9f5; margin-top: 20px; padding-top: 18px; }
+    .transport-guide h5 { margin: 0 0 10px; color: #3267d8; font-size: 17px; }
+    .transport-guide ul, .transport-guide ol { padding-left: 22px; margin: 0; color: #64748b; font-size: 16px; line-height: 1.85; }
+    .transport-guide li + li { margin-top: 8px; }
+    @media(max-width:640px) { .keynote-overlay { height: 68%; } }
   </style>
 </head>
 <body>
@@ -669,7 +992,7 @@
         <a href="#dates">重要日期</a>
         <a href="#cfp">論文徵稿</a>
         <a href="#program">會議議程</a>
-        <a href="#speakers">專題講者</a>
+        <a href="#keynotes">專題演講</a><a href="#speakers">客家研究前瞻論壇</a>
         <a href="#exhibition">技術暨成果展示</a>
         <a href="#registration">報名</a>
         <a href="#downloads">下載專區</a>
@@ -740,11 +1063,11 @@
           </div>
           <div class="date-item">
             <time datetime="2026-09-14" class="alert">2026.09.14</time>
-            <div><b>論文摘要徵稿截止<span class="alert"></span></div>
+            <div><b>論文摘要徵稿截止</b></div>
           </div>
           <div class="date-item">
             <time datetime="2026-09-29" class="alert">2026.09.29</time>
-            <div><b>論文審查結果通知<span class="alert"></span></div>
+            <div><b>論文審查結果通知</b></div>
           </div>
           <div class="date-item">
             <time datetime="2026-10-27" class="alert">2026.10.27</time>
@@ -826,15 +1149,32 @@
           </div>
         </div>
 
-        <div class="expo-box">
-          <div class="expo-time">11/24～11/25<small>09:00–17:00</small></div>
-          <div>
-            <span class="expo-tag">兩日展出</span>
-            <b>客家 AI 生態系成果展</b>
-            <span class="loc">地點：藝術中心蓮荷藝文空間</span>
-          </div>
+        <div class="expo-box" aria-labelledby="expo-title">
+          <div class="expo-time"><div>11/24–25</div><small>09:00–17:00</small></div>
+          <div class="expo-heading"><div class="expo-heading-copy"><span class="expo-label">兩日展出</span><h3 id="expo-title">客家 AI 生態系成果展</h3><span class="loc">⌖ 藝術中心蓮荷藝文空間</span></div>
+<svg class="expo-ecosystem" viewBox="0 0 420 250" role="img" aria-labelledby="ecosystem-title ecosystem-desc">
+<title id="ecosystem-title">客家 AI 生態系技術關聯</title><desc id="ecosystem-desc">HakkaGPT 串聯機器翻譯 MT、語音合成 TTS、檢索增強生成 RAG 與語音辨識 ASR，應用於文化傳承、互動溝通與教育應用。</desc>
+<defs><linearGradient id="ecosystem-core" x2="1" y2="1"><stop stop-color="#3378e2"/><stop offset="1" stop-color="#21acaa"/></linearGradient></defs>
+<ellipse cx="210" cy="125" rx="190" ry="112" fill="none" stroke="#c2fff0" stroke-opacity=".42"/>
+<ellipse cx="210" cy="125" rx="151" ry="90" fill="none" stroke="white" stroke-opacity=".45" stroke-dasharray="3 7"/>
+<circle cx="210" cy="125" r="74" fill="none" stroke="#c8fff4" stroke-opacity=".65"/>
+<g stroke="#d4fff5" stroke-width="1.5"><path d="M210 125L147 67M210 125L273 67M210 125L147 183M210 125L273 183"/></g>
+<g class="eco-orbit"><ellipse cx="210" cy="125" rx="190" ry="112" fill="none" stroke="none"/><circle cx="400" cy="125" r="4" fill="#c3fff0"/><circle cx="20" cy="125" r="3" fill="white"/></g>
+<circle cx="210" cy="125" r="51" fill="url(#ecosystem-core)" stroke="#b3fff0" stroke-width="3"/>
+<g fill="white" text-anchor="middle" font-family="Arial, Microsoft JhengHei, sans-serif"><text x="210" y="122" font-size="19" font-weight="700">HakkaGPT</text><text x="210" y="143" font-size="11">客家主權 AI</text></g>
+<g fill="#e9fffa" stroke="#a7e6e8"><circle cx="147" cy="67" r="29"/><circle cx="273" cy="67" r="29"/><circle cx="147" cy="183" r="29"/><circle cx="273" cy="183" r="29"/></g>
+<g fill="#2864a0" text-anchor="middle" font-family="Arial, Microsoft JhengHei, sans-serif" font-weight="700" font-size="17"><text x="147" y="66">MT</text><text x="273" y="66">TTS</text><text x="147" y="182">RAG</text><text x="273" y="182">ASR</text></g>
+<g fill="#357783" text-anchor="middle" font-family="Microsoft JhengHei, sans-serif" font-size="9"><text x="147" y="81">機器翻譯</text><text x="273" y="81">語音合成</text><text x="147" y="197">檢索增強生成</text><text x="273" y="197">語音辨識</text></g>
+<g fill="white" font-family="Microsoft JhengHei, sans-serif" font-size="12" text-anchor="middle"><text x="210" y="17">互動溝通</text><text x="51" y="130">文化傳承</text><text x="369" y="130">教育應用</text><text x="210" y="242">創新體驗</text></g>
+</svg></div>
+          <div class="expo-showcase"><h4>六大 AI 應用展示</h4><div class="expo-apps"><figure class="expo-app"><img src="app-1.png" alt="Gohakka 客語翻譯應用畫面" loading="lazy" decoding="async"><figcaption>Gohakka 客語翻譯</figcaption></figure>
+<figure class="expo-app"><img src="app-2.png" alt="客家 GPT應用畫面" loading="lazy" decoding="async"><figcaption>客家 GPT</figcaption></figure>
+<figure class="expo-app"><img src="app-3.png" alt="客家國大細事｜AI 文化廣播應用畫面" loading="lazy" decoding="async"><figcaption>客家國大細事｜AI 文化廣播</figcaption></figure>
+<figure class="expo-app"><img src="app-4.png" alt="全民文章共創應用畫面" loading="lazy" decoding="async"><figcaption>全民文章共創</figcaption></figure>
+<figure class="expo-app"><img src="app-5.png" alt="桃園大客家 AI 客語學習系統應用畫面" loading="lazy" decoding="async"><figcaption>桃園大客家 AI 客語學習系統</figcaption></figure>
+<figure class="expo-app"><img src="app-6.png" alt="開聲・講客應用畫面" loading="lazy" decoding="async"><figcaption>開聲・講客</figcaption></figure>          </div></div>
+          <div class="expo-platform"><p>一次探索客家 AI 的創新應用成果</p><a class="expo-link" href="https://ai.gohakka.org/" target="_blank" rel="noopener noreferrer" aria-label="探索六大 AI 應用（另開視窗）">探索六大 AI 應用 ↗</a></div>
         </div>
-
         <div class="tabs" role="tablist" aria-label="議程日期選擇">
           <button class="tab-button active" type="button" data-tab="day1" role="tab" aria-selected="true">11/24 研討會暨成果展</button>
           <button class="tab-button" type="button" data-tab="day2" role="tab" aria-selected="false">11/25 院慶慶祝大會</button>
@@ -877,96 +1217,51 @@
         <!-- DAY 2 -->
         <div class="program-panel" id="day2" role="tabpanel">
           <div class="panel-head">
-            <h3>客家研究學院 20 週年院慶慶祝大會</h3>
-            <p>11/25（三）｜地點：藝術中心展演廳</p>
-          </div>
-
-          <div class="program-row">
-            <div class="program-time">09:30–10:00</div>
-            <div class="program-content"><b>報到</b></div>
-            <div class="program-content"><b>Registration</b></div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">10:00–10:10</div>
-            <div class="program-content"><b>開幕式</b></div>
-            <div class="program-content"><b>Opening Ceremony</b></div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">10:10–10:30</div>
-            <div class="program-content"><b>貴賓致詞</b></div>
-            <div class="program-content"><b>Remarks by Distinguished Guests</b></div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">10:30–11:00</div>
-            <div class="program-content"><b>二十週年專書發表</b></div>
-            <div class="program-content"><b>20th Anniversary Book Launch</b></div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">11:00–12:00</div>
-            <div class="program-content"><b>感恩之旅－感謝歷年客院獎學金捐贈者</b></div>
-            <div class="program-content"><b>Journey of Gratitude: Honoring Past Scholarship Donors</b></div>
-          </div>
-          <div class="program-row break">
-            <div class="program-time">12:00–13:00</div>
-            <div class="program-content"><b>午宴</b></div>
-            <div class="program-content"><b>Celebration Luncheon</b></div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">13:00–14:30</div>
-            <div class="program-content"><b>頒發 115 年度客家研究學院系列獎學金</b></div>
-            <div class="program-content"><b>2026 Hakka College Scholarship Awards Ceremony</b></div>
-          </div>
-          <div class="program-row">
-            <div class="program-time">14:30–16:00</div>
-            <div class="program-content"><b>客家研究前瞻論壇</b></div>
-            <div class="program-content"><b>Hakka Studies Prospects Forum</b></div>
-          </div>
+            <h3>2026 客家人文科技研討會議程暨客家研究學院 20 周年慶</h3>
+            <p>第二天｜2026 年 11 月 25 日（三）｜地點：藝術中心展演廳</p>
+          </div><div class="program-row"><div class="program-time">09:00–09:30</div><div class="program-content"><b>來賓報到</b></div><div class="program-content"><b>Guest Registration</b></div></div>
+<div class="program-row"><div class="program-time">09:30–09:50</div><div class="program-content"><b>客家研究學院 20 周年開幕式</b></div><div class="program-content"><b>Hakka College 20th Anniversary Opening Ceremony</b></div></div>
+<div class="program-row"><div class="program-time">09:00–17:00</div><div class="program-content"><b>客家 AI 生態系成果展</b></div><div class="program-content"><b>Hakka AI Ecosystem Exhibition</b></div></div>
+<div class="program-row"><div class="program-time">09:50–10:10</div><div class="program-content"><b>新書發表會</b></div><div class="program-content"><b>Book Launch</b></div></div>
+<div class="program-row"><div class="program-time">10:10–12:10</div><div class="program-content"><b>客家研究前瞻論壇</b></div><div class="program-content"><b>Forum on the Future of Hakka Studies</b></div></div>
+<div class="program-row break"><div class="program-time">12:10–13:30</div><div class="program-content"><b>午餐時間</b></div><div class="program-content"><b>Lunch Break</b></div></div>
+<div class="program-row"><div class="program-time">13:30–16:00</div><div class="program-content"><b>頒獎典禮</b></div><div class="program-content"><b>Awards Ceremony</b></div></div>
         </div>
       </div>
     </section>
 
-    <!-- 專題講者 -->
-    <section id="speakers">
+    <!-- 客家研究前瞻論壇 -->
+    <section id="keynotes"><div class="container"><div class="section-head"><div><time class="event-date" datetime="2026-11-24">2026.11.24</time><h2>專題演講</h2></div></div><div class="keynote-grid">
+<article><div class="keynote-visual"><img src="forum-01.jpg" alt="張維安榮譽教授" loading="lazy"><div class="keynote-overlay"><span>專題演講一</span><h3>AI對台灣客家語言復甦的重要性、限制性及其定位</h3><div class="keynote-person"><h4>張維安 <span>榮譽教授</span></h4><p>國立陽明交通大學</p></div></div></div></article>
+<article><div class="keynote-visual"><img src="keynote-lee.png" alt="李鴻欣教授" loading="lazy"><div class="keynote-overlay"><span>專題演講二</span><h3>低資源客語語音處理與生成模型之創新進展</h3><div class="keynote-person"><h4>李鴻欣 <span>教授</span></h4><p>國立臺灣師範大學</p></div></div></div></article>
+</div></div></section><section id="speakers">
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="section-kicker">Speakers</div>
-            <h2>專題講者</h2>
+            
+            <time class="event-date" datetime="2026-11-25">2026.11.25</time><h2>客家研究前瞻論壇</h2>
           </div>
         </div>
 
-        <div class="speakers-pending">
-          <div class="pending-illustration">
-            <svg viewBox="0 0 300 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="講者資訊籌備中">
-              <path class="pi-arc" d="M 30 130 Q 150 60 270 130" fill="none" stroke="#dbe7fb" stroke-width="2"/>
-              <circle class="pi-sparkle-dot" cx="60" cy="70" r="4" fill="#cfe0fb"/>
-              <circle class="pi-sparkle-dot" cx="60" cy="82" r="2.5" fill="#cfe0fb"/>
-              <g class="pi-sparkle-plus" stroke="#cfe0fb" stroke-width="2" stroke-linecap="round">
-                <line x1="228" y1="90" x2="238" y2="90"/>
-                <line x1="233" y1="85" x2="233" y2="95"/>
-              </g>
-              <g class="pi-person">
-                <circle class="pi-circle" cx="150" cy="80" r="46" fill="#e9f1ff"/>
-                <g stroke="#3b6ef0" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="150" cy="64" r="15"/>
-                  <path d="M 122 108 Q 122 82 150 82 Q 178 82 178 108"/>
-                </g>
-              </g>
-              <g class="pi-bubble">
-                <path d="M 190 30 Q 190 16 204 16 L 232 16 Q 246 16 246 30 L 246 42 Q 246 56 232 56 L 214 56 L 202 66 L 204 56 L 204 56 Q 190 56 190 42 Z"
-                      fill="#ffffff" stroke="#3b6ef0" stroke-width="3"/>
-                <circle class="pi-dot1" cx="209" cy="36" r="2.6" fill="#3b6ef0"/>
-                <circle class="pi-dot2" cx="218" cy="36" r="2.6" fill="#3b6ef0"/>
-                <circle class="pi-dot3" cx="227" cy="36" r="2.6" fill="#3b6ef0"/>
-              </g>
-            </svg>
-          </div>
-          <h3>講者資訊籌備中</h3>
-          <p>講者資訊籌備中，<br>完整資訊將於定期公告！</p>
+        <div class="forum-introduction">
+          <h3>客家研究的數位人文轉向：未來數十年的典範轉移</h3>
+          <p>本論壇以「數位人文是否正在形成客家研究的典範轉移」為核心問題，邀請來自歷史學、人類學、語言學、社會科學、數位人文、資訊科技與人工智慧等不同領域的學者，從十二項前瞻議題共同思考客家研究未來十年至二十年的發展。</p>
         </div>
-      </div>
-    </section>
-
+        <article class="forum-host" aria-labelledby="forum-host-name">
+          <div class="speaker-avatar"><img src="forum-host.png" alt="論壇主持人蕭新煌" style="object-position: 50% 32%;" decoding="async"></div>
+          <div class="forum-host-info"><span class="forum-host-label">論壇主持人</span><h3 id="forum-host-name">蕭新煌 <span>榮譽講座教授</span></h3><p>台灣亞洲交流基金會董事長</p></div>
+        </article>
+<div class="speaker-grid"><article class="speaker-profile"><div class="speaker-top"><div class="speaker-meta"><div class="speaker-number"><span>議題</span><strong>01</strong></div><h3>張維安</h3></div><div class="speaker-avatar"><img src="forum-01.jpg" alt="張維安" style="object-position: 50% 24%;" loading="lazy" decoding="async"></div></div><p class="speaker-role">國立陽明交通大學<br>榮譽教授</p><h4 class="speaker-talk-title">數位人文是否正在改變客家研究的典範？</h4><div class="speaker-topic"><span>簡介</span><p class="speaker-bio">數位人文只是提供新的研究工具，還是正在改變客家研究「問什麼問題、使用什麼證據、如何形成知識」？當計算方法、大規模資料與AI進入客家研究，我們是否正面對真正的研究典範轉移？</p></div></article>
+<article class="speaker-profile"><div class="speaker-top"><div class="speaker-meta"><div class="speaker-number"><span>議題</span><strong>02</strong></div><h3>簡美玲</h3></div><div class="speaker-avatar"><img src="forum-02.jpeg" alt="簡美玲" style="object-position: 50% 18%;" loading="lazy" decoding="async"></div></div><p class="speaker-role">國立陽明交通大學<br>教授／客家文化學院院長</p><h4 class="speaker-talk-title">人類學面對數位人文轉向：客家親屬與性別民族誌田野研究的未來性</h4><div class="speaker-topic"><span>簡介</span><p class="speaker-bio">當文化被轉換成文字、影像、語音、座標、節點與向量時，哪些文化經驗可能無法被資料化？民族誌、參與觀察、身體實踐、情感、地方記憶與日常生活，在AI與大數據時代仍扮演什麼角色？數位方法如何與深描（thick description）形成互補？</p></div></article>
+<article class="speaker-profile"><div class="speaker-top"><div class="speaker-meta"><div class="speaker-number"><span>議題</span><strong>03</strong></div><h3>羅烈師</h3></div><div class="speaker-avatar"><img src="forum-03.jpeg" alt="羅烈師" style="object-position: 58% 25%;" loading="lazy" decoding="async"></div></div><p class="speaker-role">國立陽明交通大學<br>客家文化學院退休教授</p><h4 class="speaker-talk-title">從族譜到網絡：重新理解客家遷徙、宗族與社會關係</h4><div class="speaker-topic"><span>簡介</span><p class="speaker-bio">族譜、會館、寺廟、職業、婚姻與人口移動資料結合社會網絡分析與歷史GIS之後，能否重新理解客家遷徙、宗族、商業、宗教與跨境社會網絡？這些方法可能驗證、修正或挑戰哪些既有歷史論述？</p></div></article>
+<article class="speaker-profile"><div class="speaker-top"><div class="speaker-meta"><div class="speaker-number"><span>議題</span><strong>04</strong></div><h3>張翰璧</h3></div><div class="speaker-avatar"><img src="forum-04.jpg" alt="張翰璧" style="object-position: 50% 22%;" loading="lazy" decoding="async"></div></div><p class="speaker-role">國立中央大學<br>特聘教授／客家語文暨社會學系主任</p><h4 class="speaker-talk-title">從地域到網絡：數位時代如何重新理解客家認同？</h4><div class="speaker-topic"><span>簡介</span><p class="speaker-bio">客家是否仍適合主要透過祖籍、地域、語言或固定族群邊界理解？數位資料與網絡方法是否讓我們更能看見流動、多地、跨國與情境性的客家認同？</p></div></article>
+<article class="speaker-profile"><div class="speaker-top"><div class="speaker-meta"><div class="speaker-number"><span>議題</span><strong>05</strong></div><h3>俞龍通</h3></div><div class="speaker-avatar"><img src="forum-05.jpg" alt="俞龍通" style="object-position: 62% 20%;" loading="lazy" decoding="async"></div></div><p class="speaker-role">國立聯合大學<br>教授／文化觀光產業學系主任</p><h4 class="speaker-talk-title">超越數位典藏：建構客家文化知識基礎設施</h4><div class="speaker-topic"><span>簡介</span><p class="speaker-bio">客家數位典藏下一階段如何從「掃描、建檔、上網」進一步發展至OCR、結構化資料、語意檢索、知識圖譜、地方村史與跨機構資料互通？如何讓典藏真正成為研究與公共知識的基礎設施？</p></div></article>
+<article class="speaker-profile"><div class="speaker-top"><div class="speaker-meta"><div class="speaker-number"><span>議題</span><strong>06</strong></div><h3>楊長鎮</h3></div><div class="speaker-avatar"><img src="forum-06.jpg" alt="楊長鎮" style="object-position: 50% 22%;" loading="lazy" decoding="async"></div></div><p class="speaker-role">教授／客委會前主委</p><h4 class="speaker-talk-title">AI時代的客語：語言科技能否擴大客語的使用領域？</h4><div class="speaker-topic"><span>簡介</span><p class="speaker-bio">ASR、TTS、機器翻譯與大型語言模型是否能真正促進客語保存與復振？「AI會講客語」是否等於「人們會更常使用客語」？不同腔調與地方語言變體如何避免在AI標準化過程中被消除？</p></div></article>
+<article class="speaker-profile"><div class="speaker-top"><div class="speaker-meta"><div class="speaker-number"><span>議題</span><strong>07</strong></div><h3>吳翠松</h3></div><div class="speaker-avatar"><img src="forum-07.jpg" alt="吳翠松" style="object-position: 50% 20%;" loading="lazy" decoding="async"></div></div><p class="speaker-role">國立聯合大學<br>教授／客家語言與傳播研究所所長</p><h4 class="speaker-talk-title">當AI開始回答「什麼是客家？」：生成式AI與客家知識生產</h4><div class="speaker-topic"><span>簡介</span><p class="speaker-bio">當人們從搜尋資料轉向直接詢問AI，AI開始成為文化知識的中介者。LLM、RAG與知識圖譜如何影響客家知識的選擇、排序、解釋與重新敘事？研究者應如何處理AI生成內容與原始證據之間的關係？</p></div></article>
+<article class="speaker-profile"><div class="speaker-top"><div class="speaker-meta"><div class="speaker-number"><span>議題</span><strong>08</strong></div><h3>鍾國允</h3></div><div class="speaker-avatar"><img src="forum-08.webp" alt="鍾國允" style="object-position: 27% 20%;" loading="lazy" decoding="async"></div></div><p class="speaker-role">國立中央大學<br>教授／客家學院院長</p><h4 class="speaker-talk-title">誰有權教AI什麼是客家？資料主權、文化權威與AI治理</h4><div class="speaker-topic"><span>簡介</span><p class="speaker-bio">誰有權決定什麼是「正確的客家知識」？政府、學者、地方社群、文化工作者、耆老與AI開發者之間應如何分配知識權威？客家AI如何處理資料主權、來源追溯、社群參與、再現正義、偏誤與責任歸屬？</p></div></article>
+<article class="speaker-profile"><div class="speaker-top"><div class="speaker-meta"><div class="speaker-number"><span>議題</span><strong>09</strong></div><h3>張陳基</h3></div><div class="speaker-avatar"><img src="forum-09.jpeg" alt="張陳基" style="object-position: 52% 20%;" loading="lazy" decoding="async"></div></div><p class="speaker-role">國立聯合大學<br>特聘教授／客家研究學院院長</p><h4 class="speaker-talk-title">演算法文化邊緣化，還是AI中介的文化再中心化？</h4><div class="speaker-topic"><span>簡介</span><p class="speaker-bio">資料不足、腔調不平衡、主流語言偏向與演算法標準化是否可能使客家文化更加邊緣化？相反地，具有文化脈絡基礎的AI（culturally grounded AI）在什麼條件下可能提升客家的可近性、實際使用、公共能見度、社群參與與知識流通？</p></div></article>
+<article class="speaker-profile"><div class="speaker-top"><div class="speaker-meta"><div class="speaker-number"><span>議題</span><strong>10</strong></div><h3>林本炫</h3></div><div class="speaker-avatar"><img src="forum-10.webp" alt="林本炫" style="object-position: 50% 20%;" loading="lazy" decoding="async"></div></div><p class="speaker-role">國立聯合大學<br>教授／副校長</p><h4 class="speaker-talk-title">下一個二十年的客家研究：重新思考學者、教育與學術體制</h4><div class="speaker-topic"><span>簡介</span><p class="speaker-bio">未來客家研究者需要具備哪些能力？歷史學、人類學、語言學、社會科學與資訊科技如何建立真正的跨領域合作，而不是由技術取代人文？大學課程、研究中心、人才培育、國際合作與公共人文應如何因應這場轉變？</p></div></article></div>
+</div></section>
     <!-- 技術暨成果展示 -->
     <section id="exhibition">
       <div class="container">
@@ -1059,14 +1354,11 @@
           <article class="card venue-card-info">
             <h3>會場資訊</h3>
             <p><b>地點：</b>國立聯合大學八甲校區客家研究學院</p>
-            <p style="margin-top:12px;"><b>交通與到達方式：</b><br>
-              1. 臺鐵－苗栗站：<br>
-              　(1) 計程車：約12分鐘抵達八甲校區<br>
-              　(2) 公車轉乘：搭乘<a href="https://www.taiwanbus.tw/eBUSPage/Query/QueryResult.aspx?rno=58150&amp;rn=1603348570651&amp;lan=C" target="_blank" rel="noopener noreferrer">苗栗客運 5815</a>，直達八甲校區<br>
-              2. 高鐵：<br>
-              　(1) 計程車：約25分鐘抵達八甲校區<br>
-              　(2) 公車轉乘：搭乘<a href="https://www.taiwanbus.tw/eBUSPage/Query/QueryResult.aspx?rno=58150&amp;rn=1603348570651&amp;lan=C" target="_blank" rel="noopener noreferrer">苗栗客運 5815</a>，直達八甲校區
-            </p>
+            <div class="transport-guide"><h4>交通與到達方式</h4>
+<div><h5>自行開車</h5><ul><li>國道一號於苗栗交流道（132KM）下匝道往苗栗方向（台六線），經過龜山大橋直達本校（由苗栗交流道至本校八甲校區約 6 公里）。</li><li>國道三號於後龍交流道（129KM）下匝道往苗栗方向（台六線），沿台六線直達本校（後龍交流道至本校八甲校區之距離約 8 公里）。</li></ul></div>
+<div><h5>搭乘高鐵</h5><ol><li>搭乘台灣高鐵至苗栗站。</li><li>搭乘苗栗客運「5815 苗栗高鐵站－彎瓦」線公車，即可到達本校八甲校區；或搭乘計程車前往聯大八甲校區，約 25 分鐘。</li></ol></div>
+<div><h5>搭乘火車</h5><ol><li>搭乘火車至苗栗站。</li><li>搭乘苗栗客運「5815 苗栗高鐵站－彎瓦」線公車，即可到達本校八甲校區；或搭乘計程車前往聯大八甲校區，約 15 分鐘。</li></ol></div>
+</div>
           </article>
         </div>
       </div>
@@ -1085,7 +1377,7 @@
         <div class="download-list">
           <a class="download-item" href="HHT 2026 PDF.pdf" download aria-label="論文格式範本 PDF"><b>論文格式範本</b><span>PDF</span></a>
           <a class="download-item" href="HHT 2026 WORD.docx" download aria-label="論文格式範本 WORD"><b>論文格式範本</b><span>WORD</span></a>
-          <a class="download-item" href="尚未確定.pdf" download aria-label="活動議程 PDF"><b>活動議程</b><span>PDF</span></a>
+          <div class="download-item" aria-label="活動議程待公告"><b>活動議程</b><span>待公告</span></div>
         </div>
       </div>
     </section>
@@ -1204,5 +1496,34 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
+<script>
+  if (new URLSearchParams(window.location.search).get('day') === '2') {
+    document.querySelector('[data-tab="day2"]').click();
+  }
+</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
