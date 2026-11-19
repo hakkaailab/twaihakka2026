@@ -970,6 +970,25 @@
     @media(max-width:640px) { .keynote-overlay { height: 68%; } }
     .download-item.agenda-download b, .download-item.agenda-download > span { color: #d63838; }
     .agenda-download time { display: block; margin-top: 5px; font-size: 14px; color: #c53232; font-weight: 500; line-height: 1.6; }
+    #anniversary-keepsake { background: linear-gradient(120deg,#eaf1ff,#eefaf6); padding: 48px 24px; }
+    .keepsake-layout { display: grid; grid-template-columns: minmax(240px,.8fr) minmax(0,1.6fr); align-items: center; gap: 40px; }
+    .keepsake-label { color: #258e9d; font-size: 15px; font-weight: 700; letter-spacing: .12em; }
+    .keepsake-copy h2 { margin: 16px 0 22px; font-size: clamp(30px,3.5vw,44px); line-height: 1.45; color: #2e63c7; }
+    .keepsake-copy h2 span { font-size: .66em; }
+    .keepsake-copy p { color: #53637a; font-size: 17px; line-height: 1.95; margin: 0 0 16px; }
+    .keepsake-copy .keepsake-lead { font-size: 22px; font-weight: 600; color: #3064ad; }
+    .keepsake-copy .keepsake-note { color: #248e98; font-weight: 600; margin-bottom: 0; }
+    .keepsake-image { margin: 0; border-radius: 20px; overflow: hidden; box-shadow: 0 12px 30px rgba(43,86,148,.1); }
+    .keepsake-image img { width: 100%; height: auto; display: block; }
+    @media(max-width:760px) { #anniversary-keepsake { padding: 34px 20px; } .keepsake-layout { grid-template-columns: 1fr; gap: 24px; } .keepsake-copy h2 br { display: none; } .keepsake-copy h2 span { display: block; } }
+    #keepsake-title { color: #2e63c7; }
+    @supports ((background-clip: text) or (-webkit-background-clip: text)) {
+      #keepsake-title { width: fit-content; background: linear-gradient(110deg,#244cb4,#3276d8 48%,#229b9e); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+    }
+    #anniversary-keepsake .keepsake-copy p { color: #171717; }
+    #anniversary-keepsake { background: var(--mist); }
+    .keynote-overlay h3 { min-height: 4.95em; }
+    @media(max-width:640px) { .keynote-overlay { height: 76%; } .keynote-overlay h3 { min-height: 0; } }
   </style>
 </head>
 <body>
@@ -1003,6 +1022,7 @@
   </header>
 
   <main>
+
 
     <!-- 倒數計時 -->
     <section id="countdown-section">
@@ -1047,6 +1067,12 @@
         </div>
       </div>
     </section>
+<section id="anniversary-keepsake" aria-labelledby="keepsake-title">
+  <div class="container keepsake-layout">
+    <div class="keepsake-copy"><span class="keepsake-label">客家學院・20 週年紀念</span><h2 id="keepsake-title">三臺疊翠<br><span>20 週年紀念書鎮</span></h2><p class="keepsake-lead">山巒歲月，文續千秋。</p><p>由文創系師生設計，以層疊山巒凝聚二十載的深耕與傳承，紀念客家學院走過的歲月，也寄託客家文化持續開展的期許。</p><p class="keepsake-note">山色常青，文脈長流。</p></div>
+    <figure class="keepsake-image"><img src="anniversary-paperweight.png" alt="三臺疊翠：客家學院20週年紀念書鎮，藍色層疊山巒造型，搭配紀念包裝與提袋" decoding="async"></figure>
+  </div>
+</section>
 
     <!-- 重要日期 -->
     <section id="dates">
@@ -1143,7 +1169,7 @@
             <div class="program-notice" role="note">
               <span class="notice-icon" aria-hidden="true">!</span>
               <div>
-                <span class="notice-title">議程公告</span>最新正式議程已公告，請<a href="HHT2026-agenda-R5.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;font-weight:700;">查看完整議程 PDF</a>，掌握各場次時間、地點與活動安排。更新日期：2026.11.17。</div>
+                <span class="notice-title">議程公告</span>最新正式議程已公告，請<a href="HHT2026-agenda.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;font-weight:700;">查看完整議程 PDF</a>，掌握各場次時間、地點與活動安排。更新日期：2026.11.19。</div>
             </div>
           </div>
         </div>
@@ -1232,7 +1258,7 @@
     <!-- 客家研究前瞻論壇 -->
     <section id="keynotes"><div class="container"><div class="section-head"><div><time class="event-date" datetime="2026-11-24">2026.11.24</time><h2>專題演講</h2></div></div><div class="keynote-grid">
 <article><div class="keynote-visual"><img src="forum-01.jpg" alt="張維安榮譽教授" loading="lazy"><div class="keynote-overlay"><span>專題演講一</span><h3>AI對台灣客家語言復甦的重要性、限制性及其定位</h3><div class="keynote-person"><h4>張維安 <span>榮譽教授</span></h4><p>國立陽明交通大學</p></div></div></div></article>
-<article><div class="keynote-visual"><img src="keynote-lee.png" alt="李鴻欣教授" loading="lazy"><div class="keynote-overlay"><span>專題演講二</span><h3>低資源客語語音處理與生成模型之創新進展</h3><div class="keynote-person"><h4>李鴻欣 <span>教授</span></h4><p>國立臺灣師範大學</p></div></div></div></article>
+<article><div class="keynote-visual"><img src="keynote-lee.png" alt="李鴻欣教授" loading="lazy"><div class="keynote-overlay"><span>專題演講二</span><h3>臺灣客語語音辨識的三個建模問題：腔調變異、雙書寫系統與跨語言語意監督</h3><div class="keynote-person"><h4>李鴻欣 <span>教授</span></h4><p>國立臺灣師範大學</p></div></div></div></article>
 </div></div></section><section id="speakers">
       <div class="container">
         <div class="section-head">
@@ -1375,8 +1401,8 @@
         <div class="download-list">
           <a class="download-item" href="HHT 2026 PDF.pdf" download aria-label="論文格式範本 PDF"><b>論文格式範本</b><span>PDF</span></a>
           <a class="download-item" href="HHT 2026 WORD.docx" download aria-label="論文格式範本 WORD"><b>論文格式範本</b><span>WORD</span></a>
-          <a class="download-item agenda-download" href="HHT2026-agenda-R5.pdf" target="_blank" rel="noopener noreferrer" aria-label="開啟最新活動議程 PDF，2026年11月17日更新"><div><b>活動議程</b><time datetime="2026-11-17">更新日期：2026.11.17</time></div><span>PDF ↗</span></a>
-          <div class="download-item" aria-label="接駁車資訊待提供"><b>接駁車資訊</b><span>待提供</span></div>
+          <a class="download-item agenda-download" href="HHT2026-agenda.pdf" target="_blank" rel="noopener noreferrer" aria-label="開啟最新活動議程 PDF，2026年11月19日更新"><div><b>活動議程</b><time datetime="2026-11-19">更新日期：2026.11.19</time></div><span>PDF ↗</span></a>
+          <a class="download-item agenda-download" href="HHT2026-shuttle.pdf" target="_blank" rel="noopener noreferrer" aria-label="接駁車資訊 PDF，2026年11月19日更新"><div><b>接駁車資訊</b><time datetime="2026-11-19">更新日期：2026.11.19</time></div><span>PDF ↗</span></a>
         </div>
       </div>
     </section>
@@ -1502,6 +1528,11 @@
 </script>
 </body>
 </html>
+
+
+
+
+
 
 
 
