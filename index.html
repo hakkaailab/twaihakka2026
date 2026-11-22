@@ -989,6 +989,41 @@
     #anniversary-keepsake { background: var(--mist); }
     .keynote-overlay h3 { min-height: 4.95em; }
     @media(max-width:640px) { .keynote-overlay { height: 76%; } .keynote-overlay h3 { min-height: 0; } }
+#shuttle { scroll-margin-top: 110px; }
+.shuttle-card { background: #fff; border: 1px solid #dce8f5; border-radius: 24px; padding: 30px; margin-bottom: 32px; box-shadow: var(--shadow); }
+.shuttle-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.shuttle-heading h3 { color: #2e63c7; font-size: 28px; margin: 6px 0; }
+.shuttle-heading p { color: #64748b; margin: 0; }
+.shuttle-pdf { display: inline-block; padding: 12px 20px; background: #3267d8; color: white; border-radius: 999px; font-weight: 700; white-space: nowrap; }
+.shuttle-schedule, .shuttle-routes { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; margin-top: 24px; }
+.shuttle-schedule > div { background: linear-gradient(120deg,#eaf1ff,#e7f8f5); border-radius: 16px; padding: 20px 24px; }
+.shuttle-card h4 { margin: 0 0 12px; color: #2e63c7; font-size: 20px; }
+.shuttle-schedule p { margin: 6px 0; display: flex; align-items: center; justify-content: space-between; color: #53637a; }
+.shuttle-schedule strong { color: #285fca; font-size: 32px; }
+.shuttle-warning { color: #be3030; background: #fff5f4; border-radius: 10px; padding: 14px 18px; font-size: 16px; }
+.shuttle-routes > div { padding: 22px; border: 1px solid #e1e9f5; border-radius: 16px; }
+.shuttle-routes p { line-height: 1.85; color: #43556d; margin: 0; }
+.shuttle-routes p span { color: #36a6b3; }
+.shuttle-routes .shuttle-contact { margin-top: 18px; border-top: 1px solid #e1e9f5; padding-top: 14px; }
+.shuttle-contact a { color: #2e63c7; font-weight: 700; }
+.shuttle-vip { margin-top: 22px; background: #f4f7fc; box-shadow: none; }
+.shuttle-note { font-size: 14px; color: #64748b; margin: 18px 0 0; }
+@media(max-width:640px) { .shuttle-card { padding: 22px 18px; } .shuttle-heading { align-items: flex-start; flex-direction: column; } .shuttle-schedule,.shuttle-routes { grid-template-columns: 1fr; gap: 14px; } .shuttle-heading h3 { font-size: 25px; } }
+.shuttle-schedule p { gap: 18px; margin: 14px 0; }
+.shuttle-schedule p small { display: block; font-size: 14px; line-height: 1.7; margin-top: 2px; }
+.shuttle-schedule strong { flex-shrink: 0; }
+@media(min-width:1201px) {
+  header .topbar { max-width: 1480px; gap: 16px; padding-left: 24px; padding-right: 24px; }
+  header .brand { flex: 0 1 330px; }
+  header nav { flex-wrap: nowrap; gap: 0; }
+  header nav a { font-size: 13px; padding: 8px 7px; }
+}
+@media(min-width:901px) and (max-width:1200px) {
+  header .topbar { position: relative; }
+  header .menu-toggle { display: block; }
+  header nav { display: none; position: absolute; top: calc(100% + 8px); left: 22px; right: 22px; background: white; padding: 12px; border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); }
+  header nav.open { display: flex; flex-direction: column; align-items: stretch; }
+}
   </style>
 </head>
 <body>
@@ -1016,7 +1051,7 @@
         <a href="#keynotes">專題演講</a><a href="#speakers">客家研究前瞻論壇</a>
         <a href="#exhibition">技術暨成果展示</a>
         <a href="#registration">報名</a>
-        <a href="#downloads">下載專區</a>
+        <a href="#shuttle">接駁車資訊</a><a href="#downloads">下載專區</a>
       </nav>
     </div>
   </header>
@@ -1365,7 +1400,14 @@
           </div>
         </div>
 
-        <div class="venue-wrap">
+        <article id="shuttle" class="shuttle-card" aria-labelledby="shuttle-title">
+<div class="shuttle-heading"><div><span class="section-kicker">2026.11.24–25</span><h3 id="shuttle-title">活動接駁車資訊</h3><p>一般與會者接駁班次</p></div><a href="HHT2026-shuttle.pdf?updated=20261122" target="_blank" rel="noopener noreferrer" class="shuttle-pdf">完整資訊 PDF ↗</a></div>
+<div class="shuttle-schedule"><div><h4>11/24（二）</h4><p><span>去程<small>苗栗高鐵站發車</small></span><strong>09:10</strong></p><p><span>回程<small>聯合大學客家研究學院發車</small></span><strong>16:10</strong></p></div><div><h4>11/25（三）</h4><p><span>去程<small>苗栗高鐵站發車</small></span><strong>09:10</strong></p><p><span>回程<small>聯合大學客家研究學院發車</small></span><strong>13:10</strong></p></div></div>
+<p class="shuttle-warning">以上均為路線起點發車時間，非中途停靠站抵達時間。請提前至指定地點候車。</p>
+<div class="shuttle-routes"><div><h4>去程｜前往會場</h4><p>苗栗高鐵站（1 號出口）<br><span>↓</span><br>苗栗火車站（西站，約 09:25 抵達）<br><span>↓</span><br>聯合大學八甲校區客家研究學院</p><p class="shuttle-contact">隨車聯絡人：李正皓先生<br><a href="tel:0908751750">0908-751750</a></p></div><div><h4>回程｜離開會場</h4><p>聯合大學八甲校區客家研究學院（右虎雕塑前）<br><span>↓</span><br>苗栗火車站（西站）<br><span>↓</span><br>苗栗高鐵站</p><p class="shuttle-contact">隨車聯絡人：楊濬瑜先生<br><a href="tel:0975110375">0975-110375</a></p></div></div>
+<details class="shuttle-vip"><summary>20 週年院慶頒獎貴賓專車</summary><p>此為特定活動專車，乘車對象及候車安排請依主辦單位通知。</p><p>11:10｜苗栗高鐵站（1 號出口） → 聯合大學八甲校區客家研究學院<br>上午隨車聯絡人：楊濬瑜先生，<a href="tel:0975110375">0975-110375</a></p><p>16:30｜聯合大學八甲校區客家研究學院發車</p></details>
+<p class="shuttle-note">候車地點示意圖請參閱完整 PDF。請依現場工作人員指引搭乘；交通安排如有異動，以主辦單位最新公告為準。</p>
+</article><div class="venue-wrap">
           <div class="venue-map">
             <iframe
               title="會場地圖"
@@ -1399,10 +1441,11 @@
         </div>
 
         <div class="download-list">
+
           <a class="download-item" href="HHT 2026 PDF.pdf" download aria-label="論文格式範本 PDF"><b>論文格式範本</b><span>PDF</span></a>
           <a class="download-item" href="HHT 2026 WORD.docx" download aria-label="論文格式範本 WORD"><b>論文格式範本</b><span>WORD</span></a>
           <a class="download-item agenda-download" href="HHT2026-agenda.pdf" target="_blank" rel="noopener noreferrer" aria-label="開啟最新活動議程 PDF，2026年11月19日更新"><div><b>活動議程</b><time datetime="2026-11-19">更新日期：2026.11.19</time></div><span>PDF ↗</span></a>
-          <a class="download-item agenda-download" href="HHT2026-shuttle.pdf" target="_blank" rel="noopener noreferrer" aria-label="接駁車資訊 PDF，2026年11月19日更新"><div><b>接駁車資訊</b><time datetime="2026-11-19">更新日期：2026.11.19</time></div><span>PDF ↗</span></a>
+          <a class="download-item agenda-download" href="HHT2026-shuttle.pdf?updated=20261122" target="_blank" rel="noopener noreferrer" aria-label="接駁車資訊 PDF，2026年11月22日更新"><div><b>接駁車資訊</b><time datetime="2026-11-22">更新日期：2026.11.22</time></div><span>PDF ↗</span></a>
         </div>
       </div>
     </section>
@@ -1528,6 +1571,10 @@
 </script>
 </body>
 </html>
+
+
+
+
 
 
 
